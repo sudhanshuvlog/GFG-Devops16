@@ -1,0 +1,242 @@
+  522  git remote add origin https://github.com/Trainersudhanshu/test1repo.git
+  523  git remote -v
+  524  git config -l
+  525  clear
+  526  git config user.email "sudhanshutest123@gmail.com"
+  527  git config user.name "Trainersudhanshu"
+  528  git config -l
+  529  clear
+  530  git config --get user.email
+  531  git config --get user.name
+  532  ls
+  533  git remote set-url origin https://<username>:<token>@github.com/<username>/test1repo.git
+  534  clear
+  535  git log
+  536  git push
+  537  git push --set-upstream origin master
+  538  clear
+  539  git branch
+  540  git branch dev1
+  541  git branch
+  542  git branch reel
+  543  git branch
+  544  git checkout dev1
+  545  git branch
+  546  clear
+  547  touch b.txt
+  548  ls
+  549  git add b.txt
+  550  git status
+  551  git log
+  552  git commit -m "dev1 changes"
+  553  git log
+  554  git config -l
+  555  clear
+  556  git log
+  557  git switch reel
+  558  git log
+  559  touch c.txt d.txt
+  560  ls
+  561  git log
+  562  clear
+  563  git log
+  564  git log
+  565  git switch master
+  566  clear
+  567  git log
+  568  git merge dev1
+  569  git log
+  570  git branch --help
+  571  git merge --help
+  572  clear
+  573  ls
+  574  touch l.txt
+  575  git switch reel
+  576  ls
+  577  git add .
+  578  git commit -m "3rd reel commit"
+  579  git switch master
+  580  ls
+  581  git merge reel
+  582  git log
+  583  git merge -h
+  584  git merge -s
+  585  git merge -s -h
+  586  git log
+  587  cd ..
+  588  ls
+  589  mkdir test
+  590  cd test
+  591  git init
+  592  clear
+  593  ls
+  594  touch a.txt
+  595  git add .
+  596  git commit -m "master1 "
+  597  git checkout -b dev1
+  598  vi b.txt
+  599  git commit -m "dev1 first commit"
+  600  git add .
+  601  git commit -m "dev1 first commit"
+  602  git switch master
+  603  ls
+  604  touch c.txt
+  605  git add .
+  606  git commit -m "first by master"
+  607  git switch dev1
+  608  vi b.txt
+  609  git add .
+  610  git commit -m "second commit by dev1"
+  611  git switch master
+  612  git merge --ff-only dev1
+  613  git merge -s recursive dev1
+  614  git log
+  615  ls
+  616  cat b.txt
+  617  git checkout -b dev2
+  618  touch d.txt
+  619  git add .
+  620  git commit -m "first by dev2"
+  621  git switch dev1
+  622  vi b.txt
+  623  git add .
+  624  git commit -m "third by dev1"
+  625  git switch master
+  626  ls
+  627  git merge -s octopus dev1 dev2
+  628  ls
+  629  git log
+  630  git switch dev1
+  631  ls
+  632  vi b.txt
+  633  git add b.txt ; git commit -m "fourth by dev1"
+  634  vi b.txt
+  635  git add b.txt ; git commit -m "fifth by dev1"
+  636  vi b.txt
+  637  git add b.txt ; git commit -m "sixth by dev1"
+  638  git switch master
+  639  clear
+  640  git merge --squash dev1
+  641  git commit -m "squashed the changes from dev1, fixed the issue"
+  642  git log
+  643  cat b.txt
+  644  git switch dev1
+  645  ls
+  646  vi b.txt
+  647  git add b.txt ; git commit -m "seventh by dev1"
+  648  vi b.txt
+  649  git add b.txt ; git commit -m "eight by dev1"
+  650  git log
+  651  git log --oneline
+  652  touch ll.txt
+  653  git add b.txt ; git commit -m "ninth by dev1"
+  654  git add . ; git commit -m "ninth by dev1"
+  655  git log --oneline
+  656  git switch master
+  657  git cherry-pick 6189fbb2283a1d66e38457cc23c3707235ef65ec
+  658  ls
+  659  cat b.txt
+  660  git status
+  661  git log
+  662  ls
+  663  ls -l
+  664  ls -a
+  665  rm -rf .git/
+  666  ls -a
+  667  rm  .git/
+  668  rm  .git
+  669  rm -rf .git
+  670  ls -a
+  671  git init
+  672  clear
+  673  git log
+  674  touch a.txt
+  675  git add . ; git commit -m "first by master"
+  676  ls
+  677  git checkout -b dev1
+  678  ls
+  679  git log
+  680  tocuh e.txt
+  681  touch e.txt
+  682  git add . ; git commit -m "first by dev1"
+  683  git switch master
+  684  tocuh f.txt
+  685  touch f.txt
+  686  git add . ; git commit -m "second by master"
+  687  git switch dev1
+  688  ls
+  689  vi e.txt
+  690  git add . ; git commit -m "second by dev1"
+  691  git switch master
+  692  touch k.txt
+  693  git add . ; git commit -m "third by master"
+  694  git switch dev1
+  695  ls
+  696  vi e.txt
+  697  git add . ; git commit -m "third by dev1"
+  698  git switch master
+  699  clear
+  700  git rebase dev1
+  701  ls
+  702  cat e.txt
+  703  git log
+  704  git show d72e9
+  705  git show HEAD
+  706  git show HEAD~1
+  707  git show HEAD~2
+  708  ls
+  709  git branch
+  710  git branch -h
+  711  git branch -d dev1
+  712  git branch
+  713  clear
+  714  cd ..
+  715  ls
+  716  mkdir test1
+  717  cd test
+  718  cd ..
+  719  cd test1
+  720  clear
+  721  git init
+  722  ls
+  723  touch a.txt
+  724  git add . ; git commit -m "first by master"
+  725  git branch dev1
+  726  git switch dev1
+  727  ls
+  728  vi a.txt
+  729  git add . ; git commit -m "first by dev1"
+  730  git switch master
+  731  vi a.txt
+  732  git add . ; git commit -m "second by master"
+  733  git merge dev1
+  734  cat a.txt
+  735  git merge --abort
+  736  git merge dev1
+  737  git mergetool
+  738  git status
+  739  git add .
+  740  git commit -m "merged dev1 into master by solving conflict"
+  741  git log
+  742  cat a.txt
+  743  cd ..
+  744  ls
+  745  cd gitday2/
+  746  git remote -v
+  747  clear
+  748  git log
+  749  git branch feature_123
+  750  git switch feature_123
+  751  ls
+  752  vi new.txt
+  753  git add .
+  754  git commit -m "first by feature_123"
+  755  git push
+  756  git push --set-upstream origin feature_123
+  757  clear
+  758  git switch master
+  759  git fetch
+  760  git merge
+  761  git pull
+  762  git pull
+  763  clear
