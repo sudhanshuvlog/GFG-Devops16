@@ -43,5 +43,6 @@ git checkout main
 
 # Merge feature branch with squashing
 git merge --squash feature_branch
+
 These are just a few examples of common merge strategies in Git. The choice of strategy depends on the specific use case and the desired outcome. 
 Always consider the implications of each strategy, especially in a collaborative development environment.
