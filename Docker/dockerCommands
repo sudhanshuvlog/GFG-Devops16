@@ -1,0 +1,47 @@
+1. docker run
+   - Creates and starts a container.
+   - Example: docker run -d -p 80:80 nginx
+
+2. docker images
+   -  Lists all images.
+   - Example: docker images
+
+3. docker ps
+   -  Lists running containers.
+   - Example: docker ps
+
+4. docker ps -a
+   -  Lists all containers, including stopped ones.
+   - Example: docker ps -a
+
+5. docker stop
+   -  Stops one or more running containers.
+   - Example: docker stop my_container
+
+6. docker rm
+   -  Removes one or more containers.
+   - Example: docker rm my_container
+
+7. docker rmi
+   -  Removes one or more images.
+   - Example: docker rmi nginx
+
+8. docker pull
+   -  Pulls an image or a repository from a registry.
+   - Example: docker pull ubuntu
+
+9. docker logs
+    -  Fetches the logs of a container.
+    - Example: docker logs my_container
+
+10. docker inspect
+    -  Returns detailed information on Docker objects.
+    - Example: docker inspect my_container
+
+11. docker attach
+    -  Attaches to a running container.
+    - Example: docker attach my_container
+
+12. docker start
+    -  Starts one or more stopped containers.
+    - Example: docker start my_container
