@@ -1,0 +1,128 @@
+ 502  cd GFG/
+  503  cd Devops-16
+  504  ls
+  505  mkdir gitday3
+  506  cd gitday
+  507  cd gitday3
+  508  clear
+  509  git init
+  510  history
+  511  clear
+  512  git log
+  513  touch a.txt
+  514  git add .
+  515  git commmit -m "first master"
+  516  git commit -m "first master"
+  517  git log
+  518  touch b.txt
+  519  git add .
+  520  git commit -m "second by master"
+  521  touch c.txt
+  522  git add .
+  523  git commit -m "third by master"
+  524  git log
+  525  git log --oneline
+  526  ls
+  527  git reset --soft HEAD~2
+  528  ls
+  529  git log
+  530  git status
+  531  git add .
+  532  git commit -m "added both b and c this time"
+  533  git log
+  534  git reset 7ee85aefb285613fcd1c8c0c18b622cc12ee7c01
+  535  git log
+  536  git reset --mixed HEAD~1
+  537  git log
+  538  ls
+  539  git status
+  540  git add .
+  541  git status
+  542  git log
+  543  ls
+  544  git reset --mixed 7ee85aefb285613fcd1c8c0c18b622cc12ee7c01
+  545  git log
+  546  ls
+  547  git reset --hard HEAD~2
+  548  git log
+  549  ls
+  550  clear
+  551  ls
+  552  git log
+  553  ls
+  554  vi ll.txt
+  555  git add .
+  556  git commit -m "my new changes"
+  557  ls
+  558  git log
+  559  git revert HEAD
+  560  git log
+  561  ls
+  562  clear
+  563  git log
+  564  git branch dev1
+  565  git switch dev1
+  566  ls
+  567  touch b.txt
+  568  git add .
+  569  git commit -m "first changes by dev1 added b.txt"
+  570  git switch master
+  571  vi c.txt
+  572  git add .
+  573  git commit -m "master new changes"
+  574  git witch dev1
+  575  git switch dev1
+  576  ls
+  577  vi b.txt
+  578  git add .
+  579  git status
+  580  git merge master
+  581  ls
+  582  git stash list
+  583  git stash save "first time stash - b.txt file"
+  584  git stash list
+  585  cat b.txt
+  586  git merge master
+  587  git stash list
+  588  git stash show 0
+  589  touch lll.txt
+  590  git stash save "lll.txt file stashed"
+  591  git add .
+  592  git stash save "lll.txt file stashed"
+  593  git stash list
+  594  ls
+  595  git stash pop 1
+  596  ls
+  597  cat b.txt
+  598  git status
+  599  git add .
+  600  git status
+  601  git stash list
+  602  git stash clear
+  603  git stash list
+  604  vi b.txt
+  605  git add .
+  606  git stash save "b.txt third lines stashed"
+  607  git stash list
+  608  cat b.txt
+  609  git status
+  610  vi b.txt
+  611  git add .
+  612  git stash list
+  613  git stash pop stash@{0}
+  614  vi b.txt
+  615  git add .
+  616  git stash list
+  617  git stash drop 0
+  618  clear
+  619  ls
+  620  touch secret.txt
+  621  mkdir tmp
+  622  ls
+  623  vi .gitignore
+  624  git add .gitignore
+  625  git commit -m "commited gitignore file"
+  626  git status
+  627  ls
+  628  git reflog
+  629  history
