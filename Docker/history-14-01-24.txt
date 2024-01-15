@@ -1,0 +1,94 @@
+    1  cd /
+    2  yum install docker
+    3  systemctl status docker
+    4  systemctl start docker
+    5  systemctl status docker
+    6  clear
+    7  docker info
+    8  docker ps
+    9  docker --help
+   10  docker run --help
+   11  clear
+   12  docker run -t -i centos:7
+   13  docker ps
+   14  docker ps -a
+   15  docker start 12c7bf68bcd4
+   16  docker ps
+   17  docker run -it --name myubantuos ubantu 
+   18  docker run -it --name myubantuos ubuntu 
+   19  docker ps
+   20  docker attach silly_dubinsky
+   21  docker ps
+   22  docker images
+   23  docker ps
+   24  docker run -dit --name os1 ubantu
+   25  docker run -dit --name os1 ubuntu
+   26  docker ps
+   27  docker run -dit --name os1 ubuntu
+   28  docker run -dit --name os2 ubuntu
+   29  docker run -dit --name os3 ubuntu
+   30  docker ps
+   31  docker attach silly_dubinsky
+   32  docker ps
+   33  curl 172.17.0.2
+   34  clear
+   35  docker run --help
+   36  clear
+   37  docker run -dit -p 80:80 --name webos centos:7 
+   38  docker ps
+   39  docker attach webos
+   40  docker ps
+   41  curl 172.17.0.7
+   42  ps -aux
+   43  netstat -tnlp
+   44  clear
+   45  docker ps
+   46  docker stop webos
+   47  docker rm webos
+   48  docker ps -a
+   49  clear
+   50  docker run -dit --name webos centos:7
+   51  yum install httpd -y
+   52  cd /var/www/html
+   53  vi index.html
+   54  httpd
+   55  docker remove httpd
+   56  yum remove httpd
+   57  docker attach webos
+   58  docker inspect webos
+   59  curl 172.17.0.7
+   60  docker ps
+   61  docker commit -m "my own container image" --help
+   62  docker commit -m "my own container image" webos mywebos:v1
+   63  docker images
+   64  docker ps
+   65  docker stop webos
+   66  docker run -dit -p 8080:80 mywebos:v1
+   67  docker run -dit -p 8081:80 mywebos:v1
+   68  docker ps
+   69  netstat -tnlp
+   70  clear
+   71  docker ps
+   72  docker attach lucid_yonath
+   73  ls
+   74  cd /
+   75  docker ps
+   76  docker pull nginx
+   77  docker ps
+   78  docker ps -a
+   79  docker ps -a -q
+   80  docker rm 8a487b724488
+   81  docker rm -f 8a487b724488
+   82  docker ps -a -q
+   83  echo "date"
+   84  echo "hello"
+   85  echo "date"
+   86  echo `date`
+   87  docker rm -f `docker ps -a -q`
+   88  docker ps
+   89  docker run -p 81:80 nginx
+   90  docker ps
+   91  docker images
+   92  docker ps
+   93  docker run --help 
+   94  clear
