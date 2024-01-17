@@ -1,128 +1,124 @@
-## DevOps
+# DevOps
 
-### Traditional vs DevOps
+## Traditional vs DevOps
 
 ### Traditional
 
-- **Development Team** - Bussiness Requirements -> Application Code -> Store the Code in Github -> Notify the Operations Team 
-- **Operations Team**  - Download the Code from Github -> Do some manual testing ->  Deploy the Application in the Server
+- **Development Team**:
+  - Business Requirements -> Application Code -> Store the Code on a centralise location -> Notify the Operations Team
+- **Operations Team**:
+  - Download the Code from GitHub -> Perform Manual Testing -> Deploy the Application on the Server
 
-- It Consists of two teams: Development and Operations
-- **Development team** - They are responsible for developing the application
-- **Operations team** - They are responsible for deploying the application
+- Involves two distinct teams: Development and Operations.
+- **Development Team**: Responsible for application development.
+- **Operations Team**: Responsible for testing and deploying the application.
 
-### How Traditional Works?
+#### How Traditional Works?
 
-- Development team will develop the application code and they will store the code somewhere in internet like github. Then, they notify the operation team through email that they have developed the application code and they have stored the code in github. 
-- Then, the operation team will download the code from github and they will deploy the application in the server. So, the development and operations team will work separately to develop and deploy the application.
+The development team develops the application code and stores it in a centralized location on the Internet. They notify the operations team via email about the code completion. The operations team then downloads the code, conducts manual testing, and deploys the application to the server. This model keeps development and operations teams working separately.
 
-### Disadvantages of Traditional
+#### Disadvantages of Traditional
 
-- It is a manual process. So, it is time consuming.
-- It is a error prone process.
-- It have more TTM(Time to Market). So, it is not suitable for fast growing companies.
+- Manual process, leading to time-consuming tasks.
+- Prone to errors.
+- Longer Time to Market (TTM), making it unsuitable for fast-growing companies.
 
 ### DevOps
 
-- **DevOps Team** - Bussiness Requirements -> Application Code -> Store the Code in Github -> Do some automated testing -> Deploy the Application in the Server
+- **DevOps Team**:
+  - Business Requirements -> Application Code -> Store the Code on GitHub -> Automated Testing -> Deploy the Application on the Server
 
-- It Consists of only one team: DevOps team
-- **DevOps team** - They are responsible for developing and deploying the application
+- Consists of a single DevOps team responsible for both development and deployment.
 
-### How DevOps Works?
+#### How DevOps Works?
 
-- DevOps is methodology which combines the development and operations team into one team. So, the development and operations team will work together to develop and deploy the application.
+DevOps is a methodology that integrates development and operations into a single team. The DevOps team collaboratively develops and deploys applications quickly and with fewer bugs.
 
-- DevOps is a umbrella which consists of multiple tools. So, we can use these tools to automate the process of developing and deploying the application.
+DevOps utilizes various tools to automate the development and deployment processes, ensuring efficiency.
 
-### Advantages of DevOps
+#### Advantages of DevOps
 
-- It is a automated process. So, it is not time consuming.
-- It is a less error prone process.
-- It have less TTM(Time to Market). So, it is suitable for fast growing companies.
+- Automated process, reducing time consumption.
+- Less error-prone.
+- Shorter Time to Market (TTM), suitable for fast-growing companies.
 
-### DevOps Tools
+#### DevOps Tools
 
-- **Git** - It is a version control system. It is used to store the code in internet. It is used to track the changes in the code.
-- **Jenkins** - It is a continuous integration tool. It is used to automate the process of building the code. It is used to automate the process of testing the code. It is used to automate the process of deploying the code.
-- **Docker** - It is a containerization tool. It is used to automate the process of deploying the application.
-- **Kubernetes** - It is a container orchestration tool. It is used to automate the process of deploying the application. It is used to automate the process of scaling the application. It is used to automate the process of managing the application.
-- **Ansible** - It is a configuration management tool. It is used to automate the process of configuring the application. It is used to automate the process of managing the application.
-- **Terraform** - It is a infrastructure provisioning tool. It is used to automate the process of provisioning the infrastructure. It is used to automate the process of managing the infrastructure.
-- **Monitoring tools** - Graffana, Prometheus, Nagios, etc. It is used to monitor the application. It is used to monitor the infrastructure.
+- **Git**: Version control system for code storage and change tracking.
+- **Jenkins**: Continuous integration tool for automating code building, testing, and deployment.
+- **Docker**: Containerization tool for automated application deployment.
+- **Kubernetes**: Container orchestration tool for managing and scaling applications.
+- **Ansible**: Configuration management tool for automating application configuration.
+- **Terraform**: Infrastructure provisioning tool for automating infrastructure management.
+- **Monitoring tools**: Grafana, Prometheus, Nagios, etc., for application and infrastructure monitoring.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ## Git
 
 ### What is Git?
 
-- Git is a version control system. It is used to store the code in internet. It is used to track the changes in the code.
+Git is a version control system used to track changes in a local development environment.
 
 ### Why Git?
 
-- If we want to store the code in internet then we have to use git. If we want to track the changes in the code then we have to use git.
+Git is essential for storing code and tracking code changes.
 
 ### Basic Git Commands
 
-- **git init** - It is used to initialize the git repository.
-- **git status** - It is used to check the status of the git repository for tracking purpose.
-- **git add** - It is used to add the files to the staging area.
+- **git init**: Initializes a Git repository.
+- **git status**: Checks the status of the Git repository.
+- **git add**: Adds files to the staging area.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ## Linux
 
 ### What is Linux OS?
 
-- Linux is a open source operating system. It is a free operating system. It provides better Security, flexibility, stability, etc. It is used in servers, desktops, mobiles, etc.
-- It Provides better Customization Support over Windows, Mac.
-- There are various Linux Distribution like RedHat, Ubuntu, CentOS, etc. Each Linux Distribution has its own features and functionalities.
-- In Linux, We can have command line interface and graphical user interface. We can use any one of them based on our requirement.
-- In Linux, We can use command line interface to perform various operations.
+Linux is an open-source operating system known for its free, secure, flexible, and stable nature. It is used in servers, desktops, and mobiles.
 
 ### Basic Linux Commands
 
-- **pwd** - It is used to print the current working directory.
-- **ls** - It is used to list the files and directories in the current working directory.
-- **cd** - It is used to change the directory.
-- **mkdir** - It is used to create a directory.
-- **touch** - It is used to create a file.
-- **cat** - It is used to print the content of the file.
-- **id** - It is used to print the user id and group id.
+- **pwd**: Prints the current working directory.
+- **ls**: Lists files and directories.
+- **cd**: Changes the directory.
+- **mkdir**: Creates a directory.
+- **touch**: Creates a file.
+- **cat**: Prints the content of a file.
+- **id**: Prints user and group IDs.
 
 ### Linux File System
 
-- In Linux, We have a root director (/). All the files and directories are stored in the root directory.
+In Linux, all files and directories are stored in the root directory (/).
 
-### How to install Linux OS(any distribution)?
+### How to Install Linux OS (Any Distribution)?
 
-1. Bare Metal - Install Linux OS directly on the hardware.
-2. Virtualization - Install Linux OS on the virtual machine. There are various virtualization tools like VirtualBox, Hyper-V, etc.
-3. Cloud - Install Linux OS on the cloud. There are various cloud providers like AWS, Azure, GCP, etc.
-4. Container - Install Linux OS on the container. There are various containerization tools like Docker, Kubernetes, etc.
+1. **Bare Metal**: Install Linux OS directly on the hardware.
+2. **Virtualization**: Install Linux OS on a virtual machine using tools like VirtualBox or Hyper-V.
+3. **Cloud**: Install Linux OS on the cloud using providers like AWS, Azure, or GCP.
+4. **Container**: Install Linux OS on containers using tools like Docker or Kubernetes.
 
+### Hosting Apache HTTPD Web Server on Redhat Linux OS
 
-### Hosting Apache Web Server on Linux OS
-
-- Use the below command to install apache web server on Linux OS:
+- Use the below command to install Apache web server on Linux OS:
 ```
-sudo yum install -y apache2
+sudo yum install -y httpd
 ```
 
 - Use the below Command to edit the index.html file:
 ```
-sudo nano /var/www/html/index.html
+sudo vi /var/www/html/index.html
 ```
 
-- Use the below command to start the apache web server:
+- Use the below command to start the Apache web server:
 ```
-sudo systemctl start apache2
+sudo systemctl start httpd
 ```
 
-- Use the below command to stop the apache web server:
+- Use the below command to stop the Apache web server:
 ```
-sudo systemctl stop apache2
+sudo systemctl stop httpd
 ```
 
 ### vi editor
