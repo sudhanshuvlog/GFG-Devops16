@@ -1,74 +1,77 @@
-## Networking
+# Networking
 
-### What is a networking?
-Networking refers to two or more computers sharing information and communicate with each other. It follows a set of rules to communicate called protocols.
+## What is Networking?
 
-### For devices to communicate with one other three things are required:
-1. IP Address
-2. Wireless or wired connection
-3. To be on the same network
+Networking refers to the communication and information-sharing between two or more computers. This communication follows a set of rules known as protocols.
 
-### What does that Same network mean?
-- It means that the devices are connected to the same router or within same subnet.
+## Three Requirements for Devices to Communicate:
 
-### What is a IP Address?
-- It is 32 bit number that uniquely identifies a device on a network. Example:**172.16.0.0**
-- It is divided into 4 octets of 8 bits each.
-- Each octet is converted to decimal number and separated by a dot.
-- It is divided into two parts: Network ID and Host ID.
-- Network ID identifies the network and Host ID identifies the host or you can say like it defines the range of IP addresses that can be assigned to hosts.
-- IP adress examples are: **172.16.1.3**, **00001010.00010000.00000001.00000011**. This two are the known forms but we can also write in decimal form like **2886735875**, It's also a valid IP address.
+1. **IP Address**
+2. **Wireless or Wired Connection**
+3. **Being on the Same Network**
+
+## Meaning of "Same Network":
+
+Devices on the same network are connected to the same router or within the same subnet.
+
+## What is an IP Address?
+
+- A 32-bit number uniquely identifying a device on a network (e.g., **172.16.0.0**,  **13332433**).
+- It can be divided into 4 octets of 8 bits each(We normally see IP in this format).
+- Octets are converted to decimal numbers and separated by dots.
+- IP adress examples are: **172.16.1.3**, **00001010.00010000.00000001.00000011**. These two are the known forms but we can also write in decimal form like **2886735875**, It's also a valid IP address.
 - Dots are nothing but a way to separate the octets, They are not part of the IP address.
 - Normally computers will see the IP address in binary form without dots. Example: **00001010000100000000000100000011**.
 
-### How to identify whether two devices are on the same network?
-- We can use netmask to identify whether two devices are on the same network or not.
-- We can use & operator on IP address and subnet mask to get the network ID.
-- We have to do & on operation on both the devices and if the result is same then they are on the same network.
-- Example: **
-    IP Address: 172.16.1.3 (00001010.00010000.00000001.00000011)
-    Subnet Mask: 255.255.0.0 (11111111.11111111.00000000.00000000)
-    Network ID: 00001010.00010000.00000001.00000011
+## How to Identify Whether Two Devices Are on the Same Network?
 
-### Real Life Scenario of Router
-- Let's consoder a scenario where we have a LAN(Local Area Network) and we have two computers inside the network.
-- These two computers are connected to each with wired or wireless connection inside the network.
-- When we want to share data between these two computers, it uses private ip address to communicate with each other.
-- But when we want to share data with other computers outside the network, we need a router.
-- Router is a device that connects two or more networks.
-- **How Router Works?**
-    - When we want communicate with outside network, we send the data to router and router sends the data to the outside network.
-    - Fisrt, Let's Say we have System-A and it wnat to share data on internet(google.com).
+- Use a netmask to identify whether two devices are on the same network.
+- Apply the & operator on the IP address and subnet mask to get the Network ID.
+- If the results are the same for both devices, they are on the same network.
+
+Example:
+   IP Address: 172.16.1.3 (00001010.00010000.00000001.00000011)
+   Subnet Mask: 255.255.0.0 (11111111.11111111.00000000.00000000)
+   Network ID: 00001010.00010000.00000001.00000011
+
+## Real-Life Scenario of Router
+
+Consider a LAN (Local Area Network) with two computers connected. When sharing data within the network, private IP addresses are used with Switch Device. To communicate outside the network, a router is required.
+
+### How Router Works:
+- When we want to communicate with the outside network, we send the data to the router and the router sends the data to the outside network.
+    - First, Let's Say we have System-A and it wants to share data on the internet(google.com).
     - Since because we don't have a public IP address, we cannot communicate with google.com.
-    - So, we send the data to router and router sends the data to google.com.
-    - When we send data, it will automatically create network packet. Network packet is nothing but it contains the source IP address, destination IP address and the data.
-    - When the router receives the packet, it will change the source IP address to it's own public IP address and sends the packet to google.com.
-    - When google.com receives the packet, it will send the data to router.
-    - Router will change the destination IP address to the private IP address of System-A and sends the data to System-A.
-    - Inside Router, it has a table called routing table. It contains the information about the network.
-    - And it also have NAT Gateway. NAT stands for Network Address Translation. It is used to convert the private IP address to public IP address and vice versa.
-    - This is how router works.
+    - So, we send the data to the router and the router sends the data to google.com.
+    - When we send data, it will automatically create a network packet. A network packet is nothing but it contains the source IP address, destination IP address, and the data.
+    - When the router receives the packet, it will change the source IP address to its own public IP address and send the packet to google.com.
+    - When google.com receives the packet, it will send the data to the router.
+    The router will change the destination IP address to the private IP address of System-A and send the data to System-A.
+    - Inside the Router, it has a table called the NAT/PAT table. It contains the information about the network.
+    - NAT stands for Network Address Translation. It is used to convert a private IP address to a public IP address and vice versa.
+    - This is how a router works.
 
-### Some Information about AWS Amazon Linux:
-- We can use instance connect only if we use Amazon Linux AMI.
-- For other OS, we have to use SSH.
+## Information about AWS Amazon Linux
 
-### Some Information about ICMP:
-- Even though, if we create two instance in same subnet, we cannot ping one instance from another instance.
-- Because ICMP is blocked by default in AWS.
-- We have to create a security group and allow ICMP traffic to ping one instance from another instance.
+- We can connect to an Amazon Linux Instance via the AWS Webui Instance connect option, It's not available for the other images.
+- For other OS, you can use SSH to connect.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Information about ICMP Protocol(Ping use ICMP Protocol)
 
-## Git and GitHub:
+- ICMP is blocked by default in AWS default Security Group.
+- Create/Edit an existing security group by allowing ICMP traffic in the inbound rules to ping between instances.
+
+---
+
+# Git and GitHub
 - Git is a version control system.
-- GitHub is a cloud based service that hosts Git repositories.
+- GitHub is a cloud-based service that hosts Git repositories.
 - GitHub is a Centralized Version Control System.
 - We can use both Git and GitHub to track changes in our code.
 
-### Git
-- We can use Git to track changes in our code.
-- We can install git and use it locally.
+## Git
+
+Git is a version control system used to track changes in code. It is installed locally, and a `.git` folder is created when initializing a repository.
 
 ### .git folder
 - When we initialize git in a folder, it will create a .git folder.
@@ -77,32 +80,33 @@ Networking refers to two or more computers sharing information and communicate w
 - .git folder contains all the information about the changes that we made in our code.
 
 ### Git Commands
-- **git init** :  It is used to initialize git in a folder.
-- **git status** : It is used to check the status of the git.
-- **git add** : It is used to add the files to the staging area.
-- **git commit** : It is used to commit the changes.
-- **git log** : It is used to check the commit history.
-- **git reset <commit-id>** : It is used to reset the code to the previous commit.
-- **git checkout <commit-id>** : It is used to switch between commits.
-- **git diff** : It is used to check the difference between the current code and the previous code.
-- **git checkout <branch-name>** : It is used to switch between branches.
-- **git branch <branch-name>** : It is used to create a new branch.
-- **git merge <branch-name>** : It is used to merge the branch with the master branch.
-- **git clone <repo-url>** : It is used to clone a repository from GitHub.
-- **git remote add origin <repo-url>** : It is used to add a remote repository.
-- **git push origin <branch-name>** : It is used to push the code to the remote repository.
-- **git pull origin <branch-name>** : It is used to pull the code from the remote repository.
 
-### GitHub
-- We can use GitHub to host our code, collaborate with others and track changes in our code.
-- We can also use GitHub to deploy our code.
+- **git init**: Initializes git in a folder.
+- **git status**: Checks the status of git.
+- **git add**: Adds files to the staging area.
+- **git commit**: Commits changes.
+- **git log**: Displays commit history.
+- **git reset <commit-id>**: Resets code to a previous commit.
+- **git checkout <commit-id>**: Switches between commits.
+- **git diff**: Shows differences between current and previous code.
+- **git checkout <branch-name>**: Switches between branches.
+- **git branch <branch-name>**: Creates a new branch.
+- **git merge <branch-name>**: Merges a branch with the master branch.
+- **git clone <repo-url>**: Clones a repository from GitHub.
+- **git remote add origin <repo-url>**: Adds a remote repository.
+- **git push origin <branch-name>**: Pushes code to the remote repository.
+- **git pull origin <branch-name>**: Pulls code from the remote repository.
+
+## GitHub
+
+GitHub hosts code facilitates collaboration, and tracks changes. Authentication can be done via HTTPS or SSH.
 
 ### Authentication in GitHub
-- We can use HTTPS or SSH to authenticate with GitHub.
-- For HTTPS, we have to enter our username and password everytime we push the code to GitHub.
-- For SSH, we have to generate SSH key and add it to GitHub.
-- We can generate SSH key using `ssh-keygen` command.
 
-### GitKraken
-- It is a GUI tool for Git.
-- We can use it to visualize the changes, branches and commits.
+- Use HTTPS with a username and password/Github token.
+- For SSH, generate and add an SSH key with `ssh-keygen` command.
+
+## GitKraken
+
+GitKraken is a GUI tool for Git. It visualizes changes, branches, and commits.
+
