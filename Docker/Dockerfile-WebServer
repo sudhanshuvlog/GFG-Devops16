@@ -1,0 +1,10 @@
+FROM amazonlinux:latest
+RUN yum install httpd -y
+LABEL maintainer="sudhanshu"
+WORKDIR /var/www/html
+COPY ./index.html /var/www/html
+EXPOSE 80
+ENV x=10
+#CMD ["date"]
+ENTRYPOINT ["httpd"]
+CMD ["-D" , "FOREGROUND"]
