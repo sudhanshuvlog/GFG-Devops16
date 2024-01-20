@@ -1,0 +1,3 @@
+#docker login
+#docker tag myimg jinny1/myimg
+#docker push jinny1/myimg
