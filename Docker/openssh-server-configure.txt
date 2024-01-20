@@ -1,0 +1,19 @@
+Install OpenSSH Server
+#yum install openssh-server -y
+
+Make PermitRootLogin yes and PasswordAuthentication yes
+#vi /etc/ssh/sshd_config 
+
+Generate host keys
+#ssh-keygen -A 
+
+start server
+#/usr/sbin/sshd 
+
+Set the root password or password for any other user
+#passwd root
+
+Come out from the container, find it's ip addr with #hostname -I let's say IP is 172.17.0.3
+#ssh root@172.17.0.3
+
+You would be able to login! Cool!
