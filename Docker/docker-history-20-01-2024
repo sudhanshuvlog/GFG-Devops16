@@ -1,0 +1,293 @@
+[root@ip-172-31-28-214 ec2-user]# history
+    1  ps -aux | grep bash
+    2  exit
+    3  bash
+    4  ps -aux | grep bash
+    5  exit
+    6  ps -aux | grep bash
+    7  exit
+    8  bash
+    9  ps -aux | grep bash
+   10  exit
+   11  cd /
+   12  yum install docker -y
+   13  systemctl start docker
+   14  clear
+   15  docker ps
+   16  docker pull nginx
+   17  docker images
+   18  clear
+   19  docker run -dit --name webos -p 80:80 nginx
+   20  docker ps
+   21  docker attach webos
+   22  docker ps
+   23  docker start webos
+   24  docker ps
+   25  docker exec webos date
+   26  docker exec webos cal
+   27  docker exec webos ls
+   28  clear
+   29  ls
+   30  pwd
+   31  ps -aux 
+   32  clear
+   33  docker exec -it webos bash
+   34  docker ps
+   35  ps -aux | grep bash
+   36  bash
+   37  ps -aux | grep bash
+   38  ks
+   39  ls
+   40  docker ps
+   41  docker rm -f webos
+   42  docker run -dit --name webos -p 80:80 nginx
+   43  docker rm -f webos
+   44  mkdir mywebcontent
+   45  cd mywebcontent/
+   46  vi index.html
+   47  ls
+   48  clear
+   49  docker run -dit -p 80:80 --help
+   50  docker run -dit -p 80:80 -v /mywebcontent/:/usr/share/nginx/html/ nginx
+   51  docker ps
+   52  vi index.html 
+   53  clear
+   54  cd ..
+   55  clear
+   56  docker ps
+   57  docker rm -f 047d9
+   58  docker ps
+   59  docker run -dit --name webos -p 80:80 nginx
+   60  docker attach webos
+   61  docker ps
+   62  docker start webos
+   63  docker exec webos date
+   64  docker exec webos cal
+   65  docker exec webos l
+   66  docker exec webos ls
+   67  clear
+   68  date
+   69  ls
+   70  ps -aux
+   71  ps -aux | grep bash
+   72  clear
+   73  docker exec -it webos bash
+   74  docker ps
+   75  ps -aux | grep bash
+   76  bash
+   77  ps -aux | grep bash
+   78  exit
+   79  clear
+   80  cd /
+   81  docker ps
+   82  docker rm -f webos
+   83  docker run -dit -p 80:80 nginx
+   84  mkdir mycontentweb
+   85  cd mycontentweb/
+   86  ls
+   87  ls -l
+   88  clear
+   89  vi index.html
+   90  ls -l
+   91  docker rm -f webos
+   92  docker ps
+   93  docker rm -f 6ad5
+   94  docker run -dit -p 80:80 --help
+   95  docker run -dit -p 80:80 -v /mycontentweb/:/usr/share/nginx/html/ nginx
+   96  vi index.html 
+   97  pwd
+   98  touch a.html b.html
+   99  docker exec -it webos bash
+  100  docker ps
+  101  docker exec -it e3b7 bash
+  102  cd /
+  103  ls
+  104  touch important.txt
+  105  ls
+  106  docker cp important.txt e3b7:/
+  107  docker exec -it e3b7 bash
+  108  docker cp e3b7:/container.log .
+  109  ls
+  110  vim Dockerfile
+  111  docker images
+  112  docker build --help
+  113  docker build -t httpdwebimg:v1 .
+  114  docker images
+  115  docker run -it --name os1 httpdwebimg:v1
+  116  vim Dockerfile 
+  117  ls
+  118  vi index.html
+  119  vi Dockerfile 
+  120  pwd
+  121  vi Dockerfile 
+  122  docker run -it --name os1 httpdwebimg:v2
+  123  docker build -t httpdwebimg:v2 .
+  124  docker run -it --name os1 httpdwebimg:v2
+  125  docker run -it --name os2 httpdwebimg:v2
+  126  docker ps
+  127  docker rm -f os1
+  128  clear
+  129  docker run -it httpdwebimg:v2
+  130  docker sp
+  131  docker ps
+  132  docker ps -a
+  133  vi Dockerfile 
+  134  sleep 1
+  135  docker build -t httpdwebimg:v2 .
+  136  docker run -it httpdwebimg:v2
+  137  vi Dockerfile 
+  138  docker build -t httpdwebimg:v2 .
+  139  docker run -it httpdwebimg:v2
+  140  vi Dockerfile 
+  141  docker build -t httpdwebimg:v2 .
+  142  docker run -it httpdwebimg:v2
+  143  vi Dockerfile 
+  144  docker build -t httpdwebimg:v2 .
+  145  docker run -it httpdwebimg:v2
+  146  docker run -it httpdwebimg:v2 ls
+  147  docker run -it httpdwebimg:v2 pwd
+  148  docker run -it httpdwebimg:v2 
+  149  docker run -it cenots:7 date
+  150  docker run -it centos:7 date
+  151  docker run -it centos:7 date
+  152  docker run -it centos:7
+  153  vi Dockerfile 
+  154  docker build -t httpdwebimg:v2 .
+  155  docker run -it httpdwebimg:v2 
+  156  docker run -it httpdwebimg:v2 ls
+  157  date --help
+  158  date %Y
+  159  vi Dockerfile 
+  160  docker build -t httpdwebimg:v2 .
+  161  docker run -it httpdwebimg:v2 
+  162  docker ps
+  163  vi Dockerfile 
+  164  docker run -it httpdwebimg:v2 
+  165  docker run -it httpdwebimg:v2 -D foreground
+  166  docker ps
+  167  docker run -it httpdwebimg:v2 "-D foreground"
+  168  vi Dockerfile 
+  169  docker build -t httpdwebimg:v2 .
+  170  docker run -it httpdwebimg:v2
+  171  docker run -it -p 8080:80 httpdwebimg:v2
+  172  docker run -dit -p 8080:80 httpdwebimg:v2
+  173  docker ps
+  174  vim Dockerfile 
+  175  docker run -dit -p 8081:80 httpdwebimg:v2 date
+  176  docker ps
+  177  clear
+  178  docker login
+  179  docker images
+  180  docker tag httpdwebimag:v2 jinny1/httpdweb:latest
+  181  docker tag httpdwebimg:v2 jinny1/httpdweb:latest
+  182  docker images
+  183  docker push jinny1/httpdweb
+  184  cat Dockerfile 
+  185  clear
+  186  docker run -dit --name os11 centos:7
+  187  docker run -dit --name os12 centos:7
+  188  docker exec -it os13 bash
+  189  docker exec -it os12 bash
+  190  docker network ls
+  191  docker run -dit -e password=redhat --name os13 centos:7
+  192  docker exec -it os13 bash
+  193  cd /
+  194  clear
+  195  sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  196  chmod +x /usr/local/bin/docker-compose
+  197  cd /usr/local/bin/
+  198  ls
+  199  which date
+  200  cd /usr/bin
+  201  ls
+  202  cd /usr/local/bin/
+  203  ls
+  204  clear
+  205  cd /
+  206  date
+  207  /usr/bin/date
+  208  docker-compose --version
+  209  clear
+  210  vim docker-compose.yml
+  211  clear
+  212  docker volume ls
+  213  docker volume --help
+  214  docker volume create --help
+  215  docker volume create myvol
+  216  docker volume l
+  217  docker run -it -v myvol:/app centos:7
+  218  docker run -it -v myvol:/app centos:7
+  219  vi docker-compose.yml 
+  220  clear
+  221  docker-compose --help
+  222  docker-compose ps
+  223  docker-compose -d up
+  224  docker-compose up -d
+  225  ps -aux | grep 8080
+  226  docker ps 
+  227  netstat -tnlp
+  228  kill -9 38446
+  229  docker ps 
+  230  netstat -tnlp
+  231  docker-compose up -d
+  232  docker-compose ps
+  233  netstat -tnlp
+  234  kill -9 38451
+  235  netstat -tnlp
+  236  netstat -tnlp
+  237  netstat -tnlp
+  238  docker-compose up -d
+  239  docker-compose --help
+  240  docker-compose rm -f
+  241  docker-compose ps
+  242  docker-compose rm -f
+  243  docker-compose stop mywordpressproj-db-1 
+  244  docker ps
+  245  docker rm -f `docker ps -a -q`
+  246  docker ps
+  247  docker-compose ps
+  248  netstat -tnlp
+  249  docker-compose up -d
+  250  docker-compose ps
+  251  docker ps
+  252  docker exec -it 67cf78 bash
+  253  docker-compose ps
+  254  clear
+  255  docker run -it os222 centos:7
+  256  docker run -it --name os222 centos:7
+  257  clear
+  258  docker run -it --name os222 -p 81:22 centos:7
+  259  docker run -it --name os3 -p 81:22 centos:7
+  260  docker inspect os3
+  261  ssh root@172.17.0.2
+  262  ssh --help
+  263  docker run --name os2222 centos:7
+  264  docker run -dit  --name os2222 centos:7
+  265  docker run -dit  --name os11 centos:7
+  266  docker stats os11
+  267  docker run -dit  --name os12 --memory=7m  centos:7
+  268  docker stats os12
+  269  docker stats os12
+  270  docker run --help
+  271  clear
+  272  docker network ls
+  273  docker volume ls
+  274  docker network create --help
+  275  docker inspect os11
+  276  docker network ls
+  277  docker network create --driver bridge --subnet=192.168.1.0/24 mybridgenet
+  278  docker network ls
+  279  docker run -it --network mybridgenet centos:7
+  280  docker run -it --network mybridgenet centos:7
+  281  ifconfig
+  282  docker run -it --network host centos:7
+  283  docker run -it --network host nginx
+  284  c;ear
+  285  cd /
+  286  docker run -it --network none centos:7
+  287  vim docker-compose.yml 
+  288  clear
+  289  cd /
+  290  docker exec -it os12 bash
+  291  clear
+  292  history
