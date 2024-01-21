@@ -1,0 +1,7 @@
+ wget https://download.oracle.com/java/17/archive/jdk-17.0.10_linux-x64_bin.rpm
+ yum install jdk-17.0.10_linux-x64_bin.rpm -y
+
+ #Start the agent and join it to the Jenkins Master Node(You will get these below command, from jenkins master while adding this node, Don't use the blow one, They are for my server)
+
+ curl -sO http://54.146.158.246:8080/jnlpJars/agent.jar
+ java -jar agent.jar -jnlpUrl http://54.146.158.246:8080/computer/ec2/jenkins-agent.jnlp -secret 557af3ada1a128916ce4cac68d93ce7eb1b6d5e186ac18f43972697165a9f0d8 -workDir "/" &
