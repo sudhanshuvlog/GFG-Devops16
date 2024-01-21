@@ -1,4 +1,4 @@
-[root@ip-172-31-28-214 ec2-user]# history
+[root@ip-172-31-28-214 ec2-user]# history 
     1  ps -aux | grep bash
     2  exit
     3  bash
