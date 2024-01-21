@@ -10,4 +10,4 @@ Important Document Links:
 8) *Why Docker Is Fast*- Check Docker Underlying Technology 👇
 `Docker is written in the Go programming language and takes advantage of several features of the Linux kernel to deliver its functionality. Docker uses a technology called *namespaces* to provide the isolated workspace called the container. When you run a container, Docker creates a set of namespaces for that container.`
 
-*What Is Namespace* - `https://www.nginx.com/blog/what-are-namespaces-cgroups-how-do-they-work/`
+*What Is Namespace* - https://www.nginx.com/blog/what-are-namespaces-cgroups-how-do-they-work/
