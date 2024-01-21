@@ -1,0 +1,69 @@
+    5  yum install docker -y
+    6  systemctl start docker 
+    7  docker ps
+    8  clear
+    9  docker run -dit centos:7
+   10  docker ps
+   11  ps -aux | grep bash
+   12  kill -9 27307
+   13  docker ps
+   14  python3
+   15  python3 &
+   16  fg
+   17  clear
+   18  python3 
+   19  python3 &
+   20  ps -aux | grep python
+   21  fg
+   22  ps -aux | grep python
+   23  kill -9 27910
+   24  cd /proc/
+   25  ls
+   26  docker run -dit centos:7
+   27  date
+   28  cal
+   29  ps -aux | grep bash
+   30  ls
+   31  cd 28189
+   32  cd 28187
+   33  ps -aux | grep bash
+   34  pwd
+   35  ls
+   36  ls -l
+   37  cd root
+   38  ls
+   39  docker ps
+   40  docker exec -it 965feb bash
+   41  clear
+   42  pwd
+   43  ls
+   44  ifconfig
+   45  ls
+   46  cd /
+   47  ls
+   48  docker ps
+   49  docker exec -it 965feb bash
+   50  docker run -it centos:7
+   51  ps -aux | grep bash
+   52  docker ps
+   53  docker ps -a
+   54  docker start 6cae
+   55  docker ps
+   56  ps -aux | grep bash
+   57  cd /proc/28187
+   58  ls
+   59  cd root/
+   60  ls
+   61  ls
+   62  ps -aux
+   63  nsenter --help
+   64  pwd
+   65  nseenter -t 28187 -m -n -p /bin/bash
+   66  nsenter -t 28187 -m -n -p /bin/bash
+   67  clear
+   68  cd /
+   69  ls
+   70  docker ps
+   71  nsenter -t 28187 -m -n -p /bin/bash
+   72  clear
+   73  docker ps
