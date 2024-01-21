@@ -1,0 +1,51 @@
+   74  docker run -p 8080:8080 -p 50000:50000 --name jenkins -dit --restart=on-failure -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk17
+   75  docker ps
+   76  docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+   77  docker volume ls
+   78  docker exec -it jenkins bash
+   79  ls
+   80  clear
+   81  docker ps
+   82  clear
+   83  mkdir jenkinsSlave
+   84  curl -sO http://65.0.18.99:8080/jnlpJars/agent.jar
+   85  ls
+   86  java -jar agent.jar -jnlpUrl http://65.0.18.99:8080/computer/ec2/jenkins-agent.jnlp -secret b7e5d1c9d9be9cbe129592e74b59ae9bfce8073f0c25f3733963b9b29ca69243 -workDir "/jenkinsSlave"
+   87  wget https://download.oracle.com/java/17/archive/jdk-17.0.10_linux-x64_bin.rpm
+   88  yum install jdk-17.0.10_linux-x64_bin.rpm
+   89  java -jar agent.jar -jnlpUrl http://65.0.18.99:8080/computer/ec2/jenkins-agent.jnlp -secret b7e5d1c9d9be9cbe129592e74b59ae9bfce8073f0c25f3733963b9b29ca69243 -workDir "/jenkinsSlave"
+   90  java -jar agent.jar -jnlpUrl http://65.0.18.99:8080/computer/ec2/jenkins-agent.jnlp -secret b7e5d1c9d9be9cbe129592e74b59ae9bfce8073f0c25f3733963b9b29ca69243 -workDir "/jenkinsSlave" &
+   91  ps -aux | grep java
+   92  clear
+   93  df -h
+   94  vi /ets/fstab
+   95  vi /etc/fstab
+   96  df -h
+   97  mount -o remount /tmp
+   98  df -h
+   99  clear
+  100  cat /etc/fstab 
+  101  ps -aux | grep java
+  102  fg
+  103  java -jar agent.jar -jnlpUrl http://65.0.18.99:8080/computer/ec2/jenkins-agent.jnlp -secret b7e5d1c9d9be9cbe129592e74b59ae9bfce8073f0c25f3733963b9b29ca69243 -workDir "/jenkinsSlave" &
+  104  history
+  105  ls
+  106  cd jenkinsSlave/
+  107  ls
+  108  cd workspace/
+  109  ls
+  110  cd jobA/
+  111  ls
+  112  ls
+  113  git
+  114  yum install git -y
+  115  ls
+  116  docker 
+  117  docker images
+  118  cd ..
+  119  ls
+  120  cd BuildDockerImage/
+  121  ls
+  122  cd ..
+  123  ls
+  124  cd BuildAndTest/
