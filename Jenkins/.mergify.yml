@@ -1,0 +1,30 @@
+pull_request_rules:
+  - name: Assign reviewer
+    conditions:
+      - "#files>=1"
+    actions:
+      request_reviews:
+        users:
+            - "sudhanshuvlog"
+      comment:
+        message: "Requesting review from Sudhanshu"
+            
+  - name: My Conflict
+    conditions:
+      - conflict
+    actions:
+        label:
+            add:
+                - conflict
+        comment:
+            message: "This Pull Request has conflicts, could you fix it @{{author}}?"
+            
+  - name: Merge on approval and successful workflow
+    conditions:
+       - "#approved-reviews-by>=1"
+        # - "#approved-reviews-by>=0"
+    actions:
+      merge:
+        method: merge
+      comment:
+        message: "Merged successfully after approval and successful workflow (mergebot.yml)"
