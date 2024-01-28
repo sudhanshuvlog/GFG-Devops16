@@ -8,6 +8,8 @@
 - Configure the SonarQube Server using the `SonarQube-docker-compose.yml` file present in this Repo
 - Once you build your Pipeline, It's will look like this - <img width="685" alt="image" src="https://github.com/sudhanshuvlog/GFG-Devops16/assets/57751726/eb10c418-dc8b-494d-9300-25bd20fed7af">
 - CI-CD Pipeline Diagram - <img width="680" alt="image" src="https://github.com/sudhanshuvlog/GFG-Devops16/assets/57751726/d3979504-b0d3-4657-b85a-1c59165d3311">
+- Github Workflows - (Understand Github Workflows And Syntax)[https://docs.github.com/en/actions/using-workflows/about-workflows]
+- SonarQube Architecture (Click Here)[https://scm.thm.de/sonar/documentation/architecture/architecture-integration/]
 
 
 
