@@ -1,6 +1,6 @@
 ## Docker
 
-### Why Docker is Fast?
+### Why Docker is Fast? 
 
 - Docker uses the kernel of the host machine. It doesn't need to create a new kernel for each container. This makes Docker lightweight and fast.
 - If we run a command, it's just a process running on the host machine. It doesn't need to create a new kernel for each command.
