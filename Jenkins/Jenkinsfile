@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git update code') { //job
+            steps {
+                echo 'Building..'
+                sh 'yum install httpd -y'
+                git branch: 'main', url: 'https://github.com/Trainersudhanshu/PythonFlaskApp.git'
+                echo "Code Downloaded"
+                
+            }
+        }
+        stage("Test"){
+            steps {
+                sh "yum install python3-pip -y"
+                sh "pip3 install -r requirements.txt"
+                sh "pytest test_app.py"
+                echo "Test cases have been passed"
+            }
+        }
+        stage("Build Docker Image"){
+            steps{
+                sh "docker build -t myimg ."
+            }
+        }
+        stage("Deply application")
+        {
+            steps{
+                sh "docker rm -f webos"
+                sh "docker run -dit --name webos -p 80:80 myimg"
+            }
+        }
+    }
+}

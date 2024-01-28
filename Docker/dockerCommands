@@ -16,11 +16,11 @@
 
 5. docker stop
    -  Stops one or more running containers.
-   - Example: docker stop my_container
+   - Example: docker stop my_gfgcontainer
 
 6. docker rm
    -  Removes one or more containers.
-   - Example: docker rm my_container
+   - Example: docker rm my_gfgcontainer
 
 7. docker rmi
    -  Removes one or more images.
@@ -32,16 +32,61 @@
 
 9. docker logs
     -  Fetches the logs of a container.
-    - Example: docker logs my_container
+    - Example: docker logs my_gfgcontainer
 
 10. docker inspect
     -  Returns detailed information on Docker objects.
-    - Example: docker inspect my_container
+    - Example: docker inspect my_gfgcontainer
 
 11. docker attach
     -  Attaches to a running container.
-    - Example: docker attach my_container
+    - Example: docker attach my_gfgcontainer
 
 12. docker start
     -  Starts one or more stopped containers.
-    - Example: docker start my_container
+    - Example: docker start my_gfgcontainer
+
+13. docker exec
+    -  Runs a command in a running container.
+    - Example: docker exec -it my_gfgcontainer bash
+
+14. docker network create
+    -  Creates a new network.
+    - Example: docker network create my_gfgnetwork
+
+15. docker volume create
+    -  Creates a new volume.
+    - Example: docker volume create my_gfgvolume
+
+16. docker-compose up
+    -  Starts and runs a multi-container Docker application.
+    - Example: docker-compose up
+
+17. docker cp
+    -  Copies files/folders between a container and the local filesystem.
+    - Example: docker cp my_gfgcontainer:/path/to/file /local/path
+
+18. docker diff
+    -  Inspects changes to files or directories on a container's filesystem.
+    - Example: docker diff my_gfgcontainer
+
+19. docker history
+    -  Shows the history of an image.
+    - Example: docker history nginx
+
+20. docker login
+    -  Logs into a Docker registry.
+    - Example: docker login
+
+21. docker logout
+    -  Logs out from a Docker registry.
+    - Example: docker logout
+
+22. docker pause
+    -  Pauses all processes within one or more containers.
+    - Example: docker pause my_gfgcontainer
+
+23. docker unpause
+    -  Unpauses all processes within one or more containers.
+    - Example: docker unpause my_gfgcontainer
+
