@@ -5,8 +5,8 @@
 ### Basic Docker Commands
 
 - **docker inspect <container_name>** - This command will allow you to inspect a container. It will give you detailed information about the container such as the IP address, the volumes, the environment variables, etc.
-- **docker exec -it <container_name> bash** - This command will allow you to enter a running container and run commands inside of it with the help of bash program.
-- **docker run -it -p 80:80 -v /local_dir:/container_dir <image_name>** - This command will allow you to run a container with the help of an image. The -it flag will allow you to run the container in interactive mode. The -p flag will allow you to map the port of the container to the port of the host machine. The -v flag will allow you to map a local directory to a directory inside of the container. This is useful for mounting volumes. So we can have a persistent storage for our containers.
+- **docker exec -it <container_name> bash** - This command will allow you to execute bash program inside your container, you can also run any other program like date, python3 etc.
+- **docker run -it -p 80:80 -v /local_dir:/container_dir <image_name>** - This command will allow you to run a container with the given image. The `-it` flag will allow you to run the container in interactive mode with a terminal. The `-p` flag will allow you to map the port of the container to the port of the host machine. The `-v` flag will allow you to mount a local directory/volume to a directory inside your container. So we can have a persistent storage for our containers.
 - **docker cp <container_name>:<container_dir> <local_dir>** - This command will allow you to copy files from a container to your local machine.
 - **docker cp <local_dir> <container_name>:<container_dir>** - This command will allow you to copy files from your local machine to a container.
 
@@ -28,16 +28,16 @@ CMD ["nginx", "-g", "daemon off;"]
 - After creating a Dockerfile, you can build an image with the help of the following command:
 
 ```bash
-docker build -t <image_name> .
+docker build -t <image_name:version> .
 ```
 
 **Dockerfile Instructions**
 
 - **FROM** - This instruction is used to specify the base image.
-- **RUN** - This instruction is used to run commands inside of the container.
+- **RUN** - This instruction is used to run commands at the time of building the image.
 - **LABEL** - This instruction is used to add metadata to the image. You can specify any key-value pair as metadata such as maintainer, description, version, etc.
-- **COPY** - This instruction is used to copy files from the local machine to the container.
-- **ENV** - This instruction is used to set environment variables inside of the container.
+- **COPY** - This instruction is used to copy files from the local machine to the docker image.
+- **ENV** - This instruction is used to set environment variables inside of your image.
 - **WORKDIR** - This instruction is used to set the working directory for the instructions that follow it.
 - **CMD** - This instruction is used to specify the command that needs to be executed when a container is created from the image.
 - **ENTRYPOINT** - This instruction is used to specify the command that needs to be executed when a container is created from the image. You can specify any command that you would normally run on a Linux machine. The difference between CMD and ENTRYPOINT is that CMD can be overridden by passing arguments to the docker run command. Whereas, ENTRYPOINT cannot be overridden by passing arguments to the docker run command.
@@ -60,7 +60,7 @@ But if you have a Dockerfile with the following ENTRYPOINT instruction:
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
-You cannot override the ENTRYPOINT instruction by passing arguments to the docker run command like this:
+You cannot override the ENTRYPOINT instruction by passing arguments to the docker run command like this, you can just pass an extra argument to the mentioned command in Entrypoint:
 
 ```bash
 docker run -it <image_name> bash
@@ -122,7 +122,7 @@ docker-compose down
 
 ### Docker Hub
 
-Docker Hub is a container registry built for developers and open source contributors to find, use, and share their container images. With Hub, developers can host public repos that can be used for free, or private repos for teams and enterprises.
+Docker Hub is a container registry built for developers and open source contributors to find, use, and share their container images. With DockerHub, developers can host public repos that can be used for free, or private repos for teams and enterprises.
 
 To push an image to Docker Hub, you can run the following commands:
 
@@ -162,7 +162,7 @@ docker push <registry_url>/<image_name>
 ---
 
 
-- There are four types of networks in Docker:
+- There are mainly four types of networks in Docker:
 
 - **Bridge** - This is the default network type. It provides communication between the host and the containers. It also provides communication between the containers on the same host.
 - **Host** - This network type removes the network isolation between the host and the containers. It also removes the network isolation between the containers on the same host.
