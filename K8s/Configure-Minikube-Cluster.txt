@@ -1,0 +1,11 @@
+#Launch an EC2 Instance with t2.medium Instance Type(We will configure Minikube Server on it)
+
+#Install Minikube
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+rpm -Uvh minikube-latest.x86_64.rpm
+minikube start --force
+
+#Install kubectl
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+cp ./kubectl /usr/bin/
