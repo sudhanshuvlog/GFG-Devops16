@@ -1,0 +1,83 @@
+[root@ip-172-31-14-10 /]# history
+    1  cd /
+    2  yum install docker -y
+    3  systemctl start docker
+    4  clear
+    5  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+    6  ls
+    7  sudo rpm -Uvh minikube-latest.x86_64.rpm
+    8  minikube --version
+    9  minikube
+   10  docker ps
+   11  minikube start --force
+   12  docker ps
+   13  curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.28.3/2023-11-14/bin/linux/amd64/kubectl
+   14  ls
+   15  date
+   16  chmod +x kubectl 
+   17  ls
+   18  ./kubectl 
+   19  ./kubectl get pods
+   20  ls
+   21  cd /
+   22  ls
+   23  clear
+   24  ./kubectl get pods
+   25  ls
+   26  kubectl
+   27  date
+   28  which date
+   29  cd /usr/bin/
+   30  ls
+   31  cd /
+   32  cp kubectl /usr/bin/
+   33  kubectl
+   34  clear
+   35  kubectl get pods
+   36  kubectl run --help
+   37  clear
+   38  kubectl run mypod --image=nginx
+   39  kubectl get pods
+   40  kubectl get pods
+   41  docker ps
+   42  docker exec -it minikube bash
+   43  docker ps
+   44  kubectl get pods
+   45  kubectl delete pod/mypod
+   46  kubectl get pods
+   47  kubectl get deployments
+   48  kubectl create deployment mydep1 --image=nginx
+   49  kubectl get deployments
+   50  kubectl get pods
+   51  kubectl delete pod mydep1-7df8c44ff9-nj9jn
+   52  kubectl get pods
+   53  kubectl get pods
+   54  kubectl get pods
+   55  kubectl scale deployment mydep1 --replicas=3
+   56  kubectl get pods
+   57  kubectl get pods
+   58  kubectl scale deployment mydep1 --replicas=10
+   59  kubectl get pods
+   60  kubectl get pods
+   61  kubectl get pods
+   62  kubectl get pods
+   63  kubectl get pods
+   64  kubectl get pods
+   65  kubectl scale deployment mydep1 --replicas=1
+   66  kubectl get pods
+   67  docker exec -it minikube bash
+   68  curl 10.244.0.5
+   69  kubectl expose deployment mydep1 --help
+   70  kubectl expose deployment mydep1 --port=80 --type=NodePort
+   71  kubectl get service
+   72  minikube ip
+   73  curl 192.168.49.2:30691
+   74  history
+   75  vi pod.yml
+   76  vi pod.yml
+   77  kubectl apply -f pod.yml 
+   78  kubectl get pods
+   79  kubectl get pods
+   80  vi service.yml
+   81  cat pod.yml 
+   82  history

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+  labels:
+    dc: mumbai
+    env: QA
+    app: myapp
+spec:
+  containers:
+  - name: mygfgcontainer
+    image: jinny1/gfgflaskapp2:latest
+    ports:
+    - containerPort: 80
