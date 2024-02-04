@@ -1,0 +1,125 @@
+kubectl create -f secret.yml
+  878  kubectl apply -f mongo-app.yml 
+  879  kubectl apply -f mongo-service.yml 
+  880  kubectl apply -f mongo-config.yml 
+  881  kubectl apply -f mongo-express-webapp.yml 
+  882  kubectl apply -f app-service.yml 
+  883  clear
+  884  clear
+  885  kubectl get pods
+  886  kubectl delete pod mongo-deployment-69646f64f-76kcs
+  887  kubectl get pods
+  888  kubectl get pods
+  889  kubectl get all
+  890  kubectl describe service webapp-service
+  891  ls
+  892  ls
+  893  vi mongo-app.yml 
+  894  kubectl apply -f mongo-app.yml 
+  895  kubectl get pods
+  896  kubectl exec -it mongo-deployment-68dbd64d6f-z6hbv -- date
+  897  kubectl exec -it mongo-deployment-68dbd64d6f-z6hbv -- /bin/bash
+  898  kubectl get pods
+  899  kubectl delete pod mongo-deployment-68dbd64d6f-z6hbv
+  900  kubectl get pods
+  901  vi mongo-app.yml 
+  902  docker exec -it minikube bash
+  903  vi mongo-app.yml 
+  904  kubectl apply -f mongo-app.yml 
+  905  docker exec -it minikube bash
+  906  kubectl get pods
+  907  kubectl delete pod mongo-deployment-cfcdd9866-v9h9s
+  908  kubectl get pods
+  909  vi pv.yml
+  910  kubectl api-resources
+  911  kubectl api-resources | grep pv
+  912  vi pv.yml 
+  913  docker exec -it minikube bash
+  914  vi pv.yml 
+  915  hostname
+  916  docker exec -it minikube bash
+  917  vi pv.yml 
+  918  kubectl get pv
+  919  kubectl apply -f pv.yml 
+  920  kubectl get pv
+  921  vi pvc.yml
+  922  kubectl get pv
+  923  kubectl apply -f pvc.yml 
+  924  vi pvc.yml 
+  925  kubectl apply -f pvc.yml 
+  926  kubectl get pvc
+  927  kubectl get pv
+  928  vi pvc.yml 
+  929  kubectl get pvc
+  930  kubectl delete pvc mongo-pvc
+  931  kubectl get pvc
+  932  kubectl get pv
+  933  kubectl get pvc
+  934  vi pvc.yml 
+  935  cat pvc.yml 
+  936  kubectl apply -f pvc.yml 
+  937  kubectl get pv
+  938  kubectl get pvc
+  939  kubectl get pvc
+  940  kubectl get pvc
+  941  cat pvc.yml 
+  942  cat pv.yml 
+  943  cat pv.yml 
+  944  kubectl get pvc
+  945  vi pvc.yml 
+  946  kubectl apply -f pvc.yml 
+  947  kubectl delete pvc mongo-pvc
+  948  kubectl apply -f pvc.yml 
+  949  kubectl get pvc
+  950  kubectl get pv
+  951  clear
+  952  kubectl get pv
+  953  kubectl get pvc
+  954  vi mongo-app.yml 
+  955  vi mongo-app.yml 
+  956  clear
+  957  kubectl get pods
+  958  kubectl apply -f mongo-app.yml 
+  959  kubectl get pods
+  960  docker exec -it minikube bash
+  961  vi pv.yml 
+  962  clear
+  963  kubectl get namespace
+  964  kubectl get pods
+  965  kubectl create deployment mydep1 --image=nginx
+  966  kubectl create deployment mydep2 --image=nginx
+  967  kubectl get pods
+  968  kubectl get pods
+  969  kubectl get namespace
+  970  kubectl get pods
+  971  kubectl get pods -n kube-system
+  972  vi namespace.yml
+  973  kubectl apply -f namespace.yml 
+  974  kubectl get ns
+  975  vi nginx-deployment.yml
+  976  kubectl apply -f nginx-deployment.yml 
+  977  kubectl get pods
+  978  kubectl get pods -n dev
+  979  minikube dashboard
+  980  minikube dashboard &
+  981  minikube dashboard --url
+  982  socat TCP4-LISTEN:8085,fork,su=nobody TCP4:192.168.49.2:33277 &
+  983  minikube dashboard &
+  984  cd /
+  985  clear
+  986  cd k8s
+  987  ls
+  988  cat nginx-config.yml 
+  989  ls
+  990  cat nginx-html.yml 
+  991  ls
+  992  vi deployment.yml 
+  993  vi pod.yml 
+  994  ls
+  995  cd project/
+  996  ls
+  997  cat namespace-create.yml 
+  998  ls
+  999  vi mongo-app.yml 
+ 1000  cd /
+ 1001  history
