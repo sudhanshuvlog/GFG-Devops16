@@ -4,6 +4,10 @@ To deploy your MERN (MongoDB, Express.js, React.js, Node.js) application on Kube
 
 Run the below commands in the order - 
 
+### Create the Persistent Volume(PV)
+`kubectl create -f pv.yml`
+### Create the Persistent Volume Claim(PVC)
+`kubectl create -f pvc.yml`
 ### Create Kubernetes Secret for MongoDB Credentials
 `kubectl create -f secret.yml` 
 ### Create the MongoDB Deployment with ReplicaSet, It uses the secrets created above
