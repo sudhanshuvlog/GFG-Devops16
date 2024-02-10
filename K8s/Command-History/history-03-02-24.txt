@@ -1,0 +1,163 @@
+496  kubectl get pod
+  497  mkdir gfg_k8s
+  498  cd gfg_k8s/
+  499  clear
+  500  ls
+  501  kubectl get pods
+  502  kubectl get deployments
+  503  vi mongo-app.yml
+  504  kubectl get all
+  505  kubectl get replicaset
+  506  vi mongo-app.yml
+  507  vi secret.yml
+  508  kubectl get secrets
+  509  kubectl create -f secret.yml 
+  510  kubectl get secrets
+  511  kubectl describe secret mongo-secret
+  512  vi mongo-app.yml 
+  513  cat secret.yml 
+  514  vi mongo-app.yml 
+  515  kubectl create -f mongo-app.yml 
+  516  vi mongo-app.yml 
+  517  kubectl create -f mongo-app.yml 
+  518  kubectl get pods
+  519  kubectl get deployment
+  520  kubectl get secret
+  521  kubectl get rs
+  522  kubectl delete pod mongo-deployment-69646f64f-dj25t
+  523  kubectl get pods
+  524  kubectl get rs
+  525  vi mongo-express-app.yml
+  526  mv mongo-app.yml mongo-webapp.yml
+  527  ls
+  528  vi mongo-webapp.yml
+  529  vi mongo-express-webapp.yml
+  530  ls
+  531  mv mongo-webapp.yml mongo-app.yml
+  532  ls
+  533  vi mongo-app.yml 
+  534  vi mongo-express-webapp.yml
+  535  ls
+  536  vi mongo-config.yml
+  537  clear
+  538  docker exec -it minikube bash
+  539  kubectl get pods
+  540  vi mongo-service.yml
+  541  ls
+  542  vi mongo-app.yml 
+  543  vi mongo-service.yml
+  544  kubectl get svc
+  545  kubectl create -f mongo-service.yml 
+  546  vi mongo-
+  547  vi mongo-service.yml 
+  548  kubectl create -f mongo-service.yml 
+  549  kubectl get svc
+  550  docker ps
+  551  curl 10.1111.135.81
+  552  curl 10.111.135.81
+  553  curl 10.111.135.81:27017
+  554  docker exec -it minikube
+  555  docker exec -it minikube bash
+  556  ls
+  557  clear
+  558  ls
+  559  vi mongo-config.yml 
+  560  kubectl get svc
+  561  ls
+  562  vi mongo-express-webapp.yml 
+  563  kubectl get configmap
+  564  kubectl create -f mongo-config.yml 
+  565  vi mongo-config.yml 
+  566  kubectl create -f mongo-config.yml 
+  567  kubectl get configmap
+  568  vi mongo-express-webapp.yml 
+  569  kubectl create -f mongo-express-webapp.yml 
+  570  vi mongo-express-webapp.yml 
+  571  vi mongo-express-webapp.yml 
+  572  vi mongo-express-webapp.yml 
+  573  kubectl create -f mongo-express-webapp.yml 
+  574  vi mongo-express-webapp.yml 
+  575  clear
+  576  kubectl get pods
+  577  kubectl get pods
+  578  kubectl get deployment
+  579  kubectl get rs
+  580  kubectl logs webapp-deployment-8dccbd4d4-wqh2j
+  581  vi mongo-express-webapp.yml 
+  582  vi mongo-express-webapp.yml 
+  583  clear
+  584  kubectl get pods
+  585  kubectl get pods
+  586  kubectl create -f mongo-express-webapp.yml 
+  587  kubectl apply -f mongo-express-webapp.yml 
+  588  kubectl get pods
+  589  kubectl get svc
+  590  vi app-service.yml
+  591  kubectl apply -f app-service.yml 
+  592  vi app-service.yml
+  593  kubectl apply -f app-service.yml 
+  594  kubectl get svc
+  595  curl 10.100.59.217:8081
+  596  docker exec -it minikube bash
+  597  vi app-service.yml 
+  598  kubectl apply -f app-service.yml 
+  599  cat app-service.yml 
+  600  kubectl delete svc app-service
+  601  kubectl get svc
+  602  kubectl delete svc webapp-service
+  603  kubectl apply -f app-service.yml 
+  604  vi app-service.yml 
+  605  kubectl apply -f app-service.yml 
+  606  kubectl get svc
+  607  minikube ip
+  608  curl 192.168.49.2:30111
+  609  yum install socat
+  610  socat TCP4-LISTEN:80 TCP4:192.168.49.2:30111
+  611  socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111
+  612  socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &
+  613  netstat -tnlp
+  614  netstat -tnlp
+  615  pgrep socat
+  616  kill -9 51786
+  617  pgrep socat
+  618  fg
+  619  socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &
+  620  kubect get pods
+  621  kubectl get pods
+  622  kubectl logs webapp-deployment-c6d67f79-7pfb5
+  623  socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &
+  624  pgrep socat
+  625  socat TCP4-LISTEN:8080,fork,su=nobody TCP4:192.168.49.2:30111 &
+  626  kubectl get deploymnets
+  627  kubectl get deployments
+  628  socat TCP4-LISTEN:8080,fork,su=nobody TCP4:192.168.49.2:30111 &
+  629  kubectl scale deployment webapp-deployment --relicas=5
+  630  kubectl scale deployment webapp-deployment --replicas=5
+  631  kubectl get deployments
+  632  kubectl get rs
+  633  kubect get pods
+  634  kubectl get pods
+  635  kubectl scale deployment mongo-deployment --replicas=2
+  636  kubectl get pods
+  637  kubectl get rs
+  638  docker exec -it minikube bash
+  639  cd /
+  640  cd k8s/
+  641  ls
+  642  clear
+  643  ls
+  644  ls
+  645  history
+  646  clear
+  647  ls
+  648  cd project/
+  649  ls
+  650  vi mongo-app.yml 
+  651  ls
+  652  vi web-app.yml 
+  653  vi mongo-app.yml 
+  654  vi web-app.yml 
+  655  kubectl get configmap
+  656  vi web-app.yml 
+  657  cd /
+  658  history

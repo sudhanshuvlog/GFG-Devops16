@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-deployment
+  labels:
+    dc: mumbai
+    env: prod
+    app: mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      name: mongodb
+      labels:
+        app: mongo
+    spec:
+      containers:
+      - name: mongo-db
+        image: mongo:5.0
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - mountPath: /data/db
+          name: mongo-volume
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-user
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-password
+      volumes:
+      - name: mongo-volume
+        persistentVolumeClaim:
+          claimName: mongo-pvc
+
+      #emptyDir Volume Type ->
+      # volumes:
+      # - name: mongo-volume
+      #   emptyDir: {}
+
+      #hostPath Volume Type ->
+      #   volumes:
+      # - name: mongo-volume
+      #   hostPath:
+      #     path: /data
