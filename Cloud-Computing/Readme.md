@@ -16,7 +16,7 @@
 <img width="871" alt="image" src="https://github.com/sudhanshuvlog/GFG-Devops16/assets/124223047/57ba63af-f998-4321-8fa9-e2eaaa030c74">
 
 
-- AWS ElasticBeanstak - 
+- AWS ElasticBeanstalk - 
 <img width="871" alt="image" src="https://github.com/sudhanshuvlog/GFG-Devops16/assets/124223047/08024fbe-c51b-4995-842c-b32a36a6bff6">
 
 
