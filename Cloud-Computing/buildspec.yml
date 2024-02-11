@@ -1,0 +1,73 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+  #secrets-manager:
+     # key: secret-id:json-key:version-stage:version-id
+     # key: secret-id:json-key:version-stage:version-id
+  #exported-variables:
+     # - variable
+     # - variable
+  #git-credential-helper: yes
+#batch:
+  #fast-fail: true
+  #build-list:
+  #build-matrix:
+  #build-graph:
+phases:
+  #install:
+    #runtime-versions:
+      # name: version
+      # name: version
+    #commands:
+      # - command
+      # - command
+  pre_build:
+    commands:
+        - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 730335248074.dkr.ecr.ap-south-1.amazonaws.com
+        - echo "logined succesfully to ECR"
+      # - command
+  build:
+    commands:
+      - echo $CODEBUILD_BUILD_NUMBER
+      - pip install -r "requirements.txt"
+      - echo "my dependencies have been installed!"
+      - pytest
+      - echo "test cases are succesfull!"
+      - docker build -t 730335248074.dkr.ecr.ap-south-1.amazonaws.com/mygfg:$CODEBUILD_BUILD_NUMBER . 
+      - docker push 730335248074.dkr.ecr.ap-south-1.amazonaws.com/mygfg:$CODEBUILD_BUILD_NUMBER
+      # - command
+  post_build:
+    commands:
+        - column=":"
+        - echo '[
+            {
+              "name" '"${column}"' "pythonapp",
+              "imageUri" '"${column}"' "730335248074.dkr.ecr.ap-south-1.amazonaws.com/mygfg:'"${CODEBUILD_BUILD_NUMBER}"'"
+            }]' > imagedefinitions.json
+      # - command
+      # - command
+#reports:
+  #report-name-or-arn:
+    #files:
+      # - location
+      # - location
+    #base-directory: location
+    #discard-paths: yes
+    #file-format: JunitXml | CucumberJson
+artifacts:
+  files:
+    - imagedefinitions.json
+    # - location
+  bucket-name: codepipeline-ap-south-1-700690677109
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
