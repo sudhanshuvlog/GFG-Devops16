@@ -6,7 +6,7 @@
 - Deploy your WordPress App on ECS With Serverless Computing(FARGATE) - `wordpress-ECS-task-defination.json`
 - AWS Policy Generator- https://awspolicygen.s3.amazonaws.com/policygen.html
 - Setup CodeCommit And Authenticate with local Git - https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html
-- Create a CodeBuild Project - Use `buildspec.yml` file, just change your `bucket-name` and your ECR Registry URL - `730335248074.dkr.ecr.ap-south-1.amazonaws.com`
+- Create a CodeBuild Project - Use `buildspec.yml` file, just change your `bucket-name` and your ECR Registry URL, Currently it is  - `730335248074.dkr.ecr.ap-south-1.amazonaws.com`, Replace this with your's.
 - AWS ElasticBeanstalk (eb CLI)- https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html
 - AWS CodePipeline - https://aws.amazon.com/codepipeline/
 <img width="871" alt="image" src="https://github.com/sudhanshuvlog/GFG-Devops16/assets/124223047/462420ac-ee8b-4904-bd81-0d3f2b94ed3c">
