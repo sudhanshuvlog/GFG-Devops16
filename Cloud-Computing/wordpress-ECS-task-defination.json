@@ -1,0 +1,107 @@
+{
+    "family": "gfg-wordpress-task-def",
+    "containerDefinitions": [
+        {
+            "name": "db",
+            "image": "mysql",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "MYSQL_DATABASE",
+                    "value": "exampledb"
+                },
+                {
+                    "name": "MYSQL_PASSWORD",
+                    "value": "examplepass"
+                },
+                {
+                    "name": "MYSQL_ROOT_PASSWORD",
+                    "value": "examplepass"
+                },
+                {
+                    "name": "MYSQL_USER",
+                    "value": "exampleuser"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/gfg-wordpress-task-def",
+                    "awslogs-region": "ap-south-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
+        },
+        {
+            "name": "wordpress",
+            "image": "wordpress",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "wordpress-port",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": false,
+            "environment": [
+                {
+                    "name": "WORDPRESS_DB_USER",
+                    "value": "exampleuser"
+                },
+                {
+                    "name": "WORDPRESS_DB_HOST",
+                    "value": "127.0.0.1"
+                },
+                {
+                    "name": "WORDPRESS_DB_PASSWORD",
+                    "value": "examplepass"
+                },
+                {
+                    "name": "WORDPRESS_DB_NAME",
+                    "value": "exampledb"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "dependsOn": [
+                {
+                    "containerName": "db",
+                    "condition": "START"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/gfg-wordpress-task-def",
+                    "awslogs-region": "ap-south-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
+        }
+    ],
+    "taskRoleArn": "arn:aws:iam::730335248074:role/ecs-task-execution-role-new",
+    "executionRoleArn": "arn:aws:iam::730335248074:role/ecs-task-execution-role-new",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
