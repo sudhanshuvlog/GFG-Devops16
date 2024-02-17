@@ -279,7 +279,6 @@ data:
 
 ```yaml
 apiVersion: v1
-apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mongo-config
