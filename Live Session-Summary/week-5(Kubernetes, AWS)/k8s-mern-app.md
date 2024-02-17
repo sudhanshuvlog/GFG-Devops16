@@ -363,7 +363,7 @@ kubectl apply -f mongo-pv.yaml
 kubectl apply -f mongo-pvc.yaml
 ```
 
-**Let's check the status of the pods and services.**
+**Commands for check the status of the pods and services.**
 
 ```bash
 kubectl get pods
