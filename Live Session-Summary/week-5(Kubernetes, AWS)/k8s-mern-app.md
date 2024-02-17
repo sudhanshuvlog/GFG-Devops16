@@ -373,7 +373,7 @@ kubectl get svc
 
 - Note we used `Nodeport` service to expose the webapp to the outside world, But actually it only expose the services only outside the cluster.
      - If we used our local machine to create the Kubernetes cluster, we can access the webapp using the below URL, We can use the minikube IP and the NodePort to access the webapp.
-     - But if we used the cloud to create the Kubernetes cluster, we have to use socat to access the webapp. Use `socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &` command to access the webapp.
+     - But if we used the cloud to create the Kubernetes cluster, we have to use socat to access the webapp. Use `socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &` command to access the webapp, Command to istall socat `yum install socat -y`
 
 
 References:
