@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+    - package:
+        name: haproxy
+        state: present
