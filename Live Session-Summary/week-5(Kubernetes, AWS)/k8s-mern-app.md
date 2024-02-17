@@ -350,7 +350,7 @@ spec:
 - **resources:** To define the resources.
 - **storageClassName:** To define the storageClassName.
 
-**Now we created all the required files, Let's apply them to the Kubernetes cluster.**
+**Commands for the required files, Apply after you created each file**
 
 ```bash
 kubectl apply -f mongo-app.yaml
