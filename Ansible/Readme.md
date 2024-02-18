@@ -8,3 +8,4 @@
 - Refer to the Jinja Template Documentation for more information: https://jinja.palletsprojects.com/en/3.0.x/templates/
 - Explore the Ansible AWS Collection by visiting the following link: https://galaxy.ansible.com/ui/repo/published/community/aws/
 - Ansible ec2-instance module documentation: https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_module.html#ansible-collections-amazon-aws-ec2-instance-module
+- My Ansible Role in Ansible-galaxy : https://github.com/Trainersudhanshu/AnsibleRole
