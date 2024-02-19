@@ -1,0 +1,25 @@
+- hosts: all
+  tasks:
+    - name: "Install the package for me"
+      package:
+        name: "httpd"
+        state: present
+
+    - name: "copy my webpages"
+      copy:
+        src: index.html
+        dest: /var/www/html
+        owner: root
+
+    - name: "copy the cgi program"
+      copy:
+        src: python_cgi_ip.py
+        dest: /var/www/cgi-bin/ip.py
+
+    - command: "chmod +x /var/www/cgi-bin/ip.py"
+   
+    - name: "start httpd service"
+      service:
+        name: httpd
+        state: started
+        enabled: yes
