@@ -5,14 +5,14 @@
 ![Kubernetes Architecture](images/kubernetes-cluster-architecture.png)
 
 - **Master Node**
-    - The master node is responsible for managing the Kubernetes cluster.
+    - The master node/control plane is responsible for managing the Kubernetes cluster.
     - The master node consists of the following components:
         - **API Server**
             - The API server is responsible for serving the Kubernetes API.
             - It is used for communication between the master node and the worker nodes, users, and external clients.
         - **Scheduler**
             - The scheduler is responsible for scheduling the applications on the worker nodes.
-            - It is responsible for placing the pods on the nodes.
+            - It is responsible for taking the decision about the placement of the pods at nodes.
         - **Controller Manager**
             - The controller manager is responsible for managing the controllers.
             - It is responsible for managing the replication controller, endpoints controller, namespace controller, and service accounts controller.
@@ -25,7 +25,7 @@
     - The worker node is responsible for running the applications.
     - It consists of the following components:
         - **Kubelet**
-            - The kubelet is used to communicate with the master node, It will get all the information from the master node and it will run the containers.
+            - The kubelet is the k8s agent, It is used to communicate with the master node, It will get all the information from the master node and it will run the containers.
             - It is responsible for managing the containers on the worker node.
         - **Kube Proxy**
             - The kube proxy is responsible for managing the network on the worker node.
