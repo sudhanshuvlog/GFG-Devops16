@@ -2,7 +2,7 @@
 
 **Objective:**
 
-- To deploy a Mern application using K8S features like pods, deployments, services, etc.
+- To deploy a Mern application using K8S components like pods, deployments, services, etc.
 
 ### What is Mern?
 
@@ -24,23 +24,23 @@
 
 ![mern-architecture](images/mern-architecture.png)
 
-- We are Creating a deployment for the frontend/backend and the database.
+- We are going to Create two deployments one for the application(frontend/backend) and one for the database.
+
 **Frontend/Backend Deployment:**
 
-- We are creating a deployment for the frontend/backend.
-- We are using the `mongo-express:latest` image.
-- We use deployment to create the pods, because if the pod goes down, the deployment will create a new pod.
-- for exposing the frontend/backend to the outside world, we are using the `NodePort` service.
+- We are using the `mongo-express:latest` image for creating the application.
+- We use deployment to create the pods because if the pod goes down, the deployment will create a new pod, Deployment will help us manage the lifecycle of the pod
+- for exposing the frontend/backend to the outside world, we are using the service with `NodePort` Type.
 - **Nodeport:** It is a service that exposes the deployment outside the cluster.
 
 **Database Deployment:**
 
 - We are creating a deployment for the database.
 - We are using the `mongo:5.0` image.
-- We use deployment to create the pods, because if the pod goes down, the deployment will create a new pod.
-- for communicating with the frontend/backend, we are using the `ClusterIP` service.
-- **ClusterIP:** It is a service that exposes the deployment within the cluster.
-- **Secrets:** We are using secrets feature to store the sensitive information like username and password.
+- We use deployment to create the pods because if the pod goes down, the deployment will create a new pod.
+- for communication of DB with the frontend/backend, we are using the `ClusterIP` service.
+- **ClusterIP:** It is a service type that exposes the deployment within the cluster.
+- **Secrets:** We are using the secrets feature to store sensitive information like `username` and `password`.
 - **ConfigMap:** We are using ConfigMap to store the non-sensitive data in key-value pairs, In our case we are using it to store the database URL.
 - **PersistentVolume and PersistentVolumeClaim:** We are using PV and PVC to store the data in the database, So that if our pod goes down, the data will be safe.
 
@@ -114,9 +114,9 @@ spec:
 - **labels:** To identify the deployment.
 - **replicas:** Number of pods to be created.
 - **selector:** To select the pods.
-- **template:** To create the pods.
-- **containers:** To define the container.
-- **volumeMounts:** To mount the volume.
+- **template:** Define pod structure.
+- **containers:** Specify container details.
+- **volumeMounts:** To define the mount path for the volume.
 - **volumes:** To define the volume.
 - **env:** To define the environment variables.
 - **persistentVolumeClaim:** To claim the PV.
@@ -177,7 +177,7 @@ spec:
 - **replicas:** Number of pods to be created.
 - **selector:** To select the pods.
 - **template:** To create the pods.
-- **containers:** To define the container.
+- **containers:** To define the container details.
 - **volumeMounts:** To mount the volume.
 - **volumes:** To define the volume.
 - **env:** To define the environment variables.
@@ -185,7 +185,7 @@ spec:
 - **valueFrom:** To refer to the secretKeyRef.
 
 
-**Now we created the frontend/backend and database deployments, But How the frontend/backend will communicate with the database?**
+**Now that we have created the application and database deployments, But How the application will communicate with the database?**
 
 - We need to create a service for the database to communicate with the frontend/backend.
 
@@ -211,7 +211,7 @@ spec:
 **Explanation:**
 
 - We are creating a service for the mongo database.
-- We used `ClusterIP` type to communicate within the cluster, Because we don't want to expose the database to the outside world.
+- We used `ClusterIP` type to communicate within the cluster Because we didn't want to expose the database to the outside world.
 - **selector:** To select the pods.
 - **type:** Type of the service.
 - **ports:** To define the ports.
@@ -252,7 +252,7 @@ spec:
 
 5. **Create a Secret for MongoDB**
 
-- Create a file named `mongo-secret.yaml` and add the below content. In Kubernetes, we can use secrets to store sensitive information like passwords, OAuth tokens, and ssh keys.
+- Create a file named `mongo-secret.yaml` and add the below content. In Kubernetes, we can use secrets to store sensitive information like passwords, OAuth tokens, and SSH keys.
 
 ```yaml
 apiVersion: v1
@@ -345,7 +345,7 @@ spec:
 **Explanation:**
 
 - We are creating a PersistentVolumeClaim for the mongo database.
-- **accessModes:** To define the accessModes.
+- **accessModes:** To define the accessModes, here it is ReadWriteMany
 - **resources:** To define the resources.
 - **storageClassName:** To define the storageClassName.
 
@@ -362,7 +362,7 @@ kubectl apply -f mongo-pv.yaml
 kubectl apply -f mongo-pvc.yaml
 ```
 
-**Commands for check the status of the pods and services.**
+**Commands to check the status of the pods and services.**
 
 ```bash
 kubectl get pods
@@ -371,9 +371,9 @@ kubectl get svc
 
 **Now we can access the webapp using the NodePort service.**
 
-- Note we used `Nodeport` service to expose the webapp to the outside world, But actually it only expose the services only outside the cluster.
-     - If we used our local machine to create the Kubernetes cluster, we can access the webapp using the below URL, We can use the minikube IP and the NodePort to access the webapp.
-     - But if we used the cloud to create the Kubernetes cluster, we have to use socat to access the webapp. Use `socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &` command to access the webapp, Command to istall socat `yum install socat -y`
+- Note we used `Nodeport` service to expose the webapp to the outside world of your k8s cluster.
+- If we used our local machine to create the Kubernetes cluster, we can access the webapp using the below URL, We can use the minikube IP and the NodePort to access the webapp.
+- But if we used the cloud to create the Kubernetes cluster(In our case on top of EC2), So we have to create a socat to access the webapp from the internet. Use `socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &` command to access the webapp, Command to install socat `yum install socat -y`
 
 
 References:
@@ -393,5 +393,4 @@ References:
 - [Kubernetes ClusterIP](https://kubernetes.io/docs/concepts/services-networking/service/#clusterip)
 - [Kubernetes Minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [Kubernetes Kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
-
 
