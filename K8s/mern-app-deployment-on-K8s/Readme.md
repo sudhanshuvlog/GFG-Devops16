@@ -31,6 +31,6 @@ If you deployed your Kubernetes cluster on an EC2 instance and want to access th
 `yum install socat -y`
 
 ### Start socat for Routing Traffic
-`socat TCP4-LISTEN:8080,fork,su=nobody TCP4:192.168.49.2:30111`
+`socat TCP4-LISTEN:8080,fork,reuseaddr TCP4:192.168.49.2:30111 &`
 
 Now, accessing the public IP of your EC2 instance at port 8080 will route traffic to the web app on Kubernetes at port 30111.
