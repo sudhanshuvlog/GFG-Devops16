@@ -279,7 +279,6 @@ data:
 
 ```yaml
 apiVersion: v1
-apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mongo-config
@@ -350,7 +349,7 @@ spec:
 - **resources:** To define the resources.
 - **storageClassName:** To define the storageClassName.
 
-**Now we created all the required files, Let's apply them to the Kubernetes cluster.**
+**Commands for the required files, Apply after you created each file**
 
 ```bash
 kubectl apply -f mongo-app.yaml
@@ -363,7 +362,7 @@ kubectl apply -f mongo-pv.yaml
 kubectl apply -f mongo-pvc.yaml
 ```
 
-**Let's check the status of the pods and services.**
+**Commands for check the status of the pods and services.**
 
 ```bash
 kubectl get pods
@@ -374,7 +373,7 @@ kubectl get svc
 
 - Note we used `Nodeport` service to expose the webapp to the outside world, But actually it only expose the services only outside the cluster.
      - If we used our local machine to create the Kubernetes cluster, we can access the webapp using the below URL, We can use the minikube IP and the NodePort to access the webapp.
-     - But if we used the cloud to create the Kubernetes cluster, we have to use socat to access the webapp. Use `socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &` command to access the webapp.
+     - But if we used the cloud to create the Kubernetes cluster, we have to use socat to access the webapp. Use `socat TCP4-LISTEN:8080 TCP4:192.168.49.2:30111 &` command to access the webapp, Command to istall socat `yum install socat -y`
 
 
 References:

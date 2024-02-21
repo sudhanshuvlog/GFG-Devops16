@@ -1,0 +1,7 @@
+aws_region: ap-south-1
+instance_type: t2.micro
+aws_image: ami-0449c34f967dbf18a
+subnet: subnet-066cb95aec18eeee9
+keypair_name: mymumbaikey
+count: 1
+security_group: launch-wizard-2
