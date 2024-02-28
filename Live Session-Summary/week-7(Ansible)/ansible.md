@@ -2,14 +2,14 @@
 
 ### Why Ansible?
 
-- Let's say we have 100 of servers and we want to install a package on all of them. We can do it manually by ssh into each server and install the package. But it will take a lot of time and effort. Instead of doing it manually, we can use the automation tools like Ansible.
+- Let's say we have 100 servers and we want to install a package on all of them. We can do it manually by ssh into each server and install the package. But it will take a lot of time and effort. Instead of doing it manually, we can use the automation tools like Ansible, Which can automate the server configuration for us.
 
 ### What is Ansible?
 
 - Ansible is an open-source automation tool that automates the software provisioning, configuration management, and application deployment.
 
 - Advantages of Ansible:
-    - **Declerative**: We can define the state of the system and Ansible will make sure that the system is in that state.
+    - **Declarative**: We can define the system's state and Ansible will ensure that the system is in that state.
     - **Agentless**: We don't have to install any agent on the remote servers.
     - **Idempotent**: We can run the playbook multiple times and it will not change the state of the system if it is already in that state.
 
@@ -24,19 +24,19 @@ yum install ansible-core -y
 ### Ansible configuration file
 
 - The default configuration file for Ansible is `/etc/ansible/ansible.cfg`.
-- We have to run command `ansible-config init --disabled > ansible.cfg` to initiliaze a new configuration file in the current directory.
+- We have to run the command `ansible-config init --disabled > ansible.cfg` to initiate a new configuration file in the current directory.
 
 
 ### Inventory file in Ansible
 
-- Inventory file is used to define the list of servers on which we want to run the playbooks.
+The inventory file is used to define the list of servers(Target Node) on which we want to run Automate the configurations/services.
 - By default, the inventory file is located at `/etc/ansible/hosts`.
 - But we can edit the `ansible.cfg` file to define the location of the inventory file.
 - Go to the `ansible.cfg` file and add the following line to define the location of the inventory file. For searching the inventory word in the file, If we use vim editor, We can use /inventory to search the word in the file.
 ```bash
 inventory = ./inventory
 ```
-- Let's create the inventory file and define the list of servers in it.
+- Let's create the inventory file and define the list of servers.
 
 ```bash
 172.31.33.111 ansible_user=ec2-user ansible_ssh_private_key_file=key.pem
@@ -50,7 +50,7 @@ inventory = ./inventory
 ### Ansible Playbook
 
 - Playbook is a file where we define the tasks that we want to run on the remote servers.
-- Playbook is written in YAML syntax.
+The playbook is written in YAML syntax.
 
 ### Example of a playbook
 
@@ -155,10 +155,10 @@ sg: launch-wizard-13
 
 - If you look at the playbook, we used for creating the EC2 instances, we have used different modules like `package`, `pip`, `amazon.aws.ec2_instance`, `debug`, `set_fact`, and `template`.
     - `package`: This module is used to install the package on the localhost.
-    - `pip`: This module is used to install the python package using pip.
+    - `pip`: This module is used to install the Python package using pip.
     - `amazon.aws.ec2_instance`: This module is used to create the EC2 instances on AWS.
     - `debug`: This module is used to print the output of the previous task.
-    - `set_fact`: This module is used to set the fact in the playbook.
+    - `set_fact`: This module is used to set the facts in the playbook.
     - `template`: This module is used to create the file from the template.
 
 ### Running the playbook
@@ -167,7 +167,7 @@ sg: launch-wizard-13
 
 ### Dynamic Inventory
 
-- Currently, we are defining the list of servers in the inventory file manually. But we can use the dynamic inventory to define the list of servers dynamically.
+- Currently, we are defining the list of servers in the inventory file manually. However, we can use the dynamic inventory to define the list of servers dynamically.
 - For this purpose only we are using the `template` module in the above ec2.yml playbook to create the inventory file dynamically.
 - If you look at that playbook, we used the `template` module to create the inventory file from the template `inventory.j2`.
 - Let's create the `inventory.j2` file and define the following content in it.
@@ -188,7 +188,7 @@ ansible-playbook ec2.yml
 
 ### Load Balancer using Ansible
 
-- We can use one reverse proxy named haproxy to create the load balancer using Ansible.
+- We can also configure a reverse proxy with the help of a tool/program named `haproxy` to create the load balancer using Ansible.
 - Let's create a playbook to install the haproxy package and configure the load balancer.
 - Create a file `load-balancer.yml` and define the following content in it.
 
@@ -321,7 +321,7 @@ systemctl start haproxy
 
 ### Dynamic IP updation in /etc/haproxy/haproxy.cfg file
 
-- We are going to update the load-balancer.yml file to dyanamically update the IP of the web servers in the haproxy.cfg file.
+- We are going to update the load-balancer.yml file to dynamically update the IP of the web servers in the haproxy.cfg file.
 ```yaml
 - hosts: localhost
   vars_files:
@@ -356,14 +356,14 @@ systemctl start haproxy
         state: restarted
 ```
 
-- What we done here is we are going to get the isntances that is created by our ec2.yml playbook and then we are going to get the private IP of the instances and then we are going to update the haproxy.cfg file with the private IP of the instances.
-- **aws.ec2_instance_info** is a module that is used to get the information of the instances that is created by the ec2.yml playbook.
+- What we did here is we are going to get the instances that are created by our ec2.yml playbook and then we going to get the private IP of the instances and then we are going to update the haproxy.cfg file with the private IP of the instances.
+- **aws.ec2_instance_info** is a module that is used to get the information of the instances that are created by the ec2.yml playbook.
 - **register** is a keyword that is used to store the output of the module in a variable. In our case `ec2` variable.
 - **set_fact** is a module that is used to set the value of a private_ip variable.
 - **template** is a module that is used to update the haproxy.cfg file with the private IP of the instances.
 - **debug** is a module that is used to print the value of the private_ip variable.
 
-- You can see that in `load-balancer.yml` file, We used to use `template` module to update the haproxy.cfg file. But we need to create a template file to update the haproxy.cfg file. So we need to create a template file called `haproxy.j2` in the same directory where the `load-balancer.yml` file is present.
+- You can see that in `load-balancer.yml` file, We used to use the `template` module to update the haproxy.cfg file. But we need to create a template file to update the haproxy.cfg file. So we need to create a template file called `haproxy.j2` in the same directory where the `load-balancer.yml` file is present.
 - Let's create a `haproxy.j2` file.
 ```yaml
 #---------------------------------------------------------------------
@@ -457,7 +457,7 @@ backend app
   {% endfor %}
 ```
 
-- In the above file we used jinja for loop to update the private IP of the instances in the haproxy.cfg file.
+- In the above file we used Jinja syntax to create a loop to update the private IP of the instances in the haproxy.cfg file.
 
 - Now we need to run the `load-balancer.yml` file to update the haproxy.cfg file.
 ```bash
@@ -465,10 +465,10 @@ ansible-playbook load-balancer.yml
 ```
 - After running the above command, you can see that the haproxy.cfg file is updated with the private IP of the instances.
 
-### Get IP address of our server in our Page:
+### Get the IP address of our server on our Page:
 
-- We can use the backend service of our httpd server to get the IP of the server in our page.
-- For this purpose, We are going to use python subproccess module to get the IP of the server and then we are going to use the IP in our page.
+- We can use the backend service of our httpd server to show the IP of the server on our page(Basically we are going to do server-side programming)
+- For this purpose, We are going to use the Python `subprocess` module to get the IP of the server and then we are going to use the IP in our page.
 - Let's create `python_cgi_ip.py` file
 ```
 #!/usr/bin/env python3
@@ -487,7 +487,7 @@ print("</body>")
 print("</html>")
 ```
 
-- We are going to copy this file to our httpd server and then we are going to use the backend service to get the IP of the server in our page.
+- We are going to copy this file to our httpd server and then we are going to use this backend server to get the IP of the server in our page.
 - This step also we are going to automate using ansible.
 - Let's update the `httpd.yml` file to copy the `python_cgi_ip.py` file to the httpd server.
 ```yaml
@@ -520,12 +520,13 @@ print("</html>")
 ```
 
 - In the above `httpd.yml` file, We added a new task to copy the `python_cgi_ip.py` file to the httpd server.
-- And we also added a new task to change the permission of the `python_cgi_ip.py` file to executable.
+- We also added a new task to change the permission of the `python_cgi_ip.py` file to executable.
 - Now, Let's run the `httpd.yml` file to copy the `python_cgi_ip.py` file to the httpd server.
 ```bash
 ansible-playbook httpd.yml
 ```
-- Now we can the load balancer IP in the browser to see the IP of the server.
+- Now we can go to load balancer IP in the browser, and the load balancer will automatically route you to your backend targets, and you can verify this by looking into the printed IP of the server in your web app.
+
 
 ### Ansible roles
 
@@ -555,7 +556,7 @@ role-name
 
 ### Ansible Vault
 
-- Ansible Vault is a feature of ansible that allows you to keep sensitive data such as passwords or keys in encrypted files, rather than as plaintext in your playbooks or roles.
+- Ansible Vault is a feature of Ansible that allows you to keep sensitive data such as passwords or keys in encrypted files, rather than as plaintext in your playbooks or roles.
 - You can use ansible-vault to encrypt the file and then you can use the file in your playbook.
 - Run `ansible-vault create file-name` to create a new encrypted file. It will ask for a password to encrypt the file.
 - You can also put that password in another file and use that file to encrypt the file.
