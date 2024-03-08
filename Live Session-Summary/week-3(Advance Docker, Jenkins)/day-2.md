@@ -16,7 +16,7 @@ You can read more about namespaces [here](https://www.nginx.com/blog/what-are-na
 
 ---
 
-## Kernl
+## Kernal
 
 - The kernel is the core of the operating system. It is responsible for managing the resources of the system and for communicating with the hardware.
 - In simple words the kernel is the interface between the hardware and the software.
