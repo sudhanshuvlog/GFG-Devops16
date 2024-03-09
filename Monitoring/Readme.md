@@ -8,4 +8,4 @@
   -  Expose Docker Metrics - `vi /etc/docker/daemon.json` Add The content given in this repo
   -  Restart Docker Engine - `systemctl restart docker`
   -  Restart Prometheus Server, When you made any configuration changes - `docker restart prometheus-container`
-  -  Start Grafana Server - `dker run -d --name=grafana -p 3000:3000 grafana/grafana`
+  -  Start Grafana Server - `docker run -d --name=grafana -p 3000:3000 grafana/grafana`
