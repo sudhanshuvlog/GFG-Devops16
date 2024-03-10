@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: "deploymenv1"
+spec: 
+  replicas: 0
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      name: "mypod"
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: "myos"
+        image: jinny1/gfgflaskapp:v1
